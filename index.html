@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Domingos de Rayuela - Transformamos domingos en recuerdos felices. Acompañamos a niñas de 6 a 12 años que viven en un hogar con juegos, meriendas y presencia.">
+  
+  <!-- SEO & Open Graph -->
+  <meta property="og:title" content="Domingos de Rayuela - Transformamos domingos en recuerdos felices">
+  <meta property="og:description" content="Cada domingo acompañamos a niñas de 6 a 12 años que viven en un hogar, con juegos, meriendas y presencia en momentos importantes.">
+  <meta property="og:image" content="/assets/og-image.jpg">
+  <meta property="og:url" content="https://domingosderayuela.org">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <title>Domingos de Rayuela | Transformamos domingos en recuerdos felices</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Baloo+2:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navbar fijo (solo visible al hacer scroll) -->
+  <header class="header header--hidden" id="header">
+    <div class="header__container">
+      <a href="index.html" class="header__logo" aria-label="Ir al inicio">
+        <img src="./logo2.png" alt="Domingos de Rayuela" class="header__logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+        <span class="header__logo-text" style="display: none;">Domingos de Rayuela</span>
+      </a>
+      <button class="header__menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">
+        <span class="header__menu-icon"></span>
+      </button>
+      <nav class="header__nav" id="navMenu" aria-label="Navegación principal">
+        <ul class="header__nav-list">
+          <li><a href="#inicio" class="header__nav-link">Inicio</a></li>
+          <li><a href="#nosotros" class="header__nav-link">Nosotros</a></li>
+          <li><a href="#quiero-ayudar" class="header__nav-link header__nav-link--cta">Quiero ayudar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="inicio" aria-label="Banner principal">
+      <div class="carousel" id="carousel" aria-roledescription="carrusel" aria-label="Imágenes de nuestras actividades">
+        <div class="carousel__track" id="carouselTrack">
+          <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="1 de 2">
+            <img src="./imagen1.png" alt="Niñas jugando en el hogar" class="carousel__image" loading="eager">
+          </div>
+          <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="2 de 2">
+            <img src="./imagen2.png" alt="Voluntarios compartiendo la merienda" class="carousel__image" loading="lazy">
+          </div>
+        </div>
+        
+        <div class="carousel__overlay"></div>
+        
+        <div class="carousel__content">
+          <img src="./logorayuela.png" alt="Domingos de Rayuela" class="hero__logo">
+          <h1 class="hero__title">Cada domingo puede ser el mejor recuerdo de una niña.</h1>
+          <p class="hero__tagline">Voluntariado con <span class="highlight">ternura</span>, <span class="highlight">juego</span> y <span class="highlight">compromiso</span></p>
+          <p class="hero__subtitle">En Domingos de Rayuela acompañamos a niñas de 6 a 12 años que viven en un hogar. Creamos espacios seguros para jugar, compartir una merienda y sentirse queridas. Somos una red de personas que dona tiempo y presencia.</p>
+          <div class="hero__ctas">
+            <a href="#quiero-ayudar" class="btn btn--primary"><svg class="btn__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>Quiero ayudar</a>
+            <a href="#nosotros" class="btn btn--secondary">Conocenos mejor<svg class="btn__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+          </div>
+        </div>
+        
+        <div class="hero__doodle hero__doodle--left" aria-hidden="true"></div>
+        <div class="hero__doodle hero__doodle--right" aria-hidden="true"></div>
+        
+        
+        <div class="carousel__dots" role="tablist" aria-label="Indicadores de slides">
+          <button class="carousel__dot carousel__dot--active" role="tab" aria-selected="true" aria-label="Ir a slide 1" data-index="0"></button>
+          <button class="carousel__dot" role="tab" aria-selected="false" aria-label="Ir a slide 2" data-index="1"></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="impact-strip" aria-label="Impacto del voluntariado">
+      <div class="container">
+        <div class="impact-strip__grid">
+          <article class="impact-strip__item">
+            <span class="impact-strip__value">+50</span>
+            <p class="impact-strip__label">Domingos compartidos</p>
+          </article>
+          <article class="impact-strip__item">
+            <span class="impact-strip__value">6-12</span>
+            <p class="impact-strip__label">Años de las niñas</p>
+          </article>
+          <article class="impact-strip__item">
+            <span class="impact-strip__value">100%</span>
+            <p class="impact-strip__label">Trabajo voluntario</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ¿Qué hacemos? -->
+    <section class="section nosotros" id="nosotros" aria-labelledby="nosotros-title">
+      <div class="container">
+        <h2 class="section__title section__title--center" id="nosotros-title">¿Qué hacemos?</h2>
+        
+        <div class="nosotros__content">
+          <p class="nosotros__text nosotros__text--lead">
+            Somos Domingos de Rayuela, un grupo de personas que cree que la presencia cambia historias.
+          </p>
+          <p class="nosotros__text">
+            Cada domingo visitamos un hogar de niñas (6 a 12 años) que atraviesan situaciones de vulnerabilidad y transitan procesos de revinculación familiar o adopción.
+          </p>
+          <p class="nosotros__text">
+            Vamos a compartir lo simple: jugar, escuchar, merendar y celebrar — porque esos momentos también construyen cuidado.
+          </p>
+        </div>
+
+        <div class="nosotros__grid nosotros__grid--cards">
+          <div class="nosotros__card-item">
+            <div class="nosotros__card-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+                <path d="M12 12h.01"></path>
+                <path d="M17 12h.01"></path>
+                <path d="M7 12h.01"></path>
+              </svg>
+            </div>
+            <span class="nosotros__card-text">Jugamos juntas</span>
+          </div>
+          <div class="nosotros__card-item">
+            <div class="nosotros__card-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 8h1a4 4 0 1 1 0 8h-1"></path>
+                <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"></path>
+                <line x1="6" y1="2" x2="6" y2="4"></line>
+                <line x1="10" y1="2" x2="10" y2="4"></line>
+                <line x1="14" y1="2" x2="14" y2="4"></line>
+              </svg>
+            </div>
+            <span class="nosotros__card-text">Compartimos la merienda</span>
+          </div>
+          <div class="nosotros__card-item">
+            <div class="nosotros__card-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
+            <span class="nosotros__card-text">Celebramos fechas importantes</span>
+          </div>
+          <div class="nosotros__card-item">
+            <div class="nosotros__card-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+            </div>
+            <span class="nosotros__card-text">Acompañamos procesos</span>
+          </div>
+          <div class="nosotros__card-item">
+            <div class="nosotros__card-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                <path d="M2 2l7.586 7.586"></path>
+                <circle cx="11" cy="11" r="2"></circle>
+              </svg>
+            </div>
+            <span class="nosotros__card-text">Proponemos actividades</span>
+          </div>
+          <div class="nosotros__card-item">
+            <div class="nosotros__card-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 12 20 22 4 22 4 12"></polyline>
+                <rect x="2" y="7" width="20" height="5"></rect>
+                <line x1="12" y1="22" x2="12" y2="7"></line>
+                <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
+                <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+              </svg>
+            </div>
+            <span class="nosotros__card-text">Ayudamos según lo que haga falta</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nuestros momentos compartidos -->
+    <section class="section galeria" id="galeria" aria-labelledby="galeria-title">
+      <div class="container">
+        <h2 class="section__title section__title--center" id="galeria-title">Nuestros momentos compartidos</h2>
+        <p class="section__subtitle section__subtitle--italic">Cuando alguien viene a jugar, el domingo se siente distinto.</p>
+        <div class="galeria__wrapper" aria-hidden="true">
+          <div class="galeria__track">
+            <div class="galeria__slide"><img src="./imagen1.png" alt="Momento compartido"></div>
+            <div class="galeria__slide"><img src="./imagen2.png" alt="Momento compartido"></div>
+            <div class="galeria__slide"><img src="./imagen1.png" alt="Momento compartido"></div>
+            <div class="galeria__slide"><img src="./imagen2.png" alt="Momento compartido"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Frase emocional -->
+    <section class="quote-section" aria-label="Frase inspiradora">
+      <div class="container">
+        <blockquote class="quote-section__content">
+          <p class="quote-section__text">No hacemos magia. Solo estamos ahí.<br>Y eso, a veces, lo cambia todo.</p>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- Quiero Ayudar -->
+    <section class="section quiero-ayudar" id="quiero-ayudar" aria-labelledby="ayudar-title">
+      <div class="container">
+        <h2 class="section__title section__title--center" id="ayudar-title">Quiero ayudar</h2>
+        <p class="section__subtitle">No hay una sola forma de ayudar. Cada aporte suma y hace posible que sigamos yendo cada domingo.</p>
+        
+        <div class="ayuda-options">
+          <!-- Donaciones -->
+          <a href="donaciones.html" class="ayuda-card">
+            <div class="ayuda-card__icon" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+            </div>
+            <h3 class="ayuda-card__title">Donaciones</h3>
+            <p class="ayuda-card__description">Cada aporte ayuda a sostener juegos, meriendas y actividades.</p>
+            <span class="ayuda-card__cta">Quiero donar <span aria-hidden="true">→</span></span>
+          </a>
+
+          <!-- Programa de padrinos -->
+          <a href="padrinos.html" class="ayuda-card">
+            <div class="ayuda-card__icon" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <h3 class="ayuda-card__title">Programa de padrinos</h3>
+            <p class="ayuda-card__description">Con una contribución mensual nos ayudás a planificar y darle continuidad a lo que hacemos.</p>
+            <span class="ayuda-card__cta">Quiero ser padrino/madrina <span aria-hidden="true">→</span></span>
+          </a>
+
+          <!-- Programa de voluntariado -->
+          <a href="voluntariado.html" class="ayuda-card">
+            <div class="ayuda-card__icon" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                <line x1="15" y1="9" x2="15.01" y2="9"></line>
+              </svg>
+            </div>
+            <h3 class="ayuda-card__title">Programa de voluntariado</h3>
+            <p class="ayuda-card__description">Si tenés ganas de compartir tiempo y presencia, este lugar también puede ser para vos.</p>
+            <span class="ayuda-card__cta">Quiero sumarme <span aria-hidden="true">→</span></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="section contacto" id="contacto" aria-labelledby="contacto-title">
+      <div class="container">
+        <div class="contacto__simple">
+          <h2 class="section__title section__title--center" id="contacto-title">Contacto</h2>
+          <p class="section__subtitle">¿Tenés ganas de sumarte o querés saber más? Escribinos y lo charlamos.</p>
+          
+          <div class="contacto__icons">
+            <a href="https://wa.me/5491123456789" class="contacto__icon-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+              </svg>
+            </a>
+            <a href="https://instagram.com/domingosderayuela" class="contacto__icon-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="mailto:hola@domingosderayuela.org" class="contacto__icon-link" aria-label="Email">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </a>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo-link">
+            <img src="./logorayuela.png" alt="Domingos de Rayuela" class="footer__logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+            <span class="footer__logo-text" style="display: none;">Domingos de Rayuela</span>
+          </a>
+          <p class="footer__tagline">Transformamos domingos en recuerdos felices</p>
+        </div>
+        <nav class="footer__nav" aria-label="Navegación del footer">
+          <ul class="footer__nav-list">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#quiero-ayudar">Quiero ayudar</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+        <div class="footer__social">
+          <a href="https://wa.me/5491123456789" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+            </svg>
+          </a>
+          <a href="https://instagram.com/domingosderayuela" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="mailto:hola@domingosderayuela.org" class="footer__social-link" aria-label="Email">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Domingos de Rayuela. Sin fines de lucro.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast__content">
+      <svg class="toast__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+      </svg>
+      <span class="toast__message" id="toastMessage"></span>
+    </div>
+    <button class="toast__close" id="toastClose" aria-label="Cerrar notificación">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
