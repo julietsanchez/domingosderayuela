@@ -26,8 +26,6 @@
   const carousel = document.getElementById('carousel');
   const carouselTrack = document.getElementById('carouselTrack');
   const carouselSlides = document.querySelectorAll('.carousel__slide');
-  const carouselPrev = document.getElementById('carouselPrev');
-  const carouselNext = document.getElementById('carouselNext');
   const carouselDots = document.querySelectorAll('.carousel__dot');
 
   // ===== Carousel State =====
@@ -154,10 +152,6 @@
       goToSlide(currentSlide + 1);
     }
 
-    function prevSlide() {
-      goToSlide(currentSlide - 1);
-    }
-
     function startAutoplay() {
       if (prefersReducedMotion) return;
       
@@ -172,22 +166,7 @@
       }
     }
 
-    // Carousel controls
-    if (carouselPrev) {
-      carouselPrev.addEventListener('click', () => {
-        prevSlide();
-        startAutoplay();
-      });
-    }
-
-    if (carouselNext) {
-      carouselNext.addEventListener('click', () => {
-        nextSlide();
-        startAutoplay();
-      });
-    }
-
-    if (carouselDots) {
+    if (carouselDots && carouselDots.length) {
       carouselDots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
           goToSlide(index);
@@ -196,50 +175,7 @@
       });
     }
 
-    // Pause on hover
-    carousel.addEventListener('mouseenter', stopAutoplay);
-    carousel.addEventListener('mouseleave', startAutoplay);
-
-    // Keyboard navigation
-    carousel.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowLeft') {
-        prevSlide();
-        startAutoplay();
-      } else if (e.key === 'ArrowRight') {
-        nextSlide();
-        startAutoplay();
-      }
-    });
-
-    // Touch/swipe support
-    let touchStartX = 0;
-    let touchEndX = 0;
-    const swipeThreshold = 50;
-
-    carousel.addEventListener('touchstart', (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-      stopAutoplay();
-    }, { passive: true });
-
-    carousel.addEventListener('touchend', (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      handleSwipe();
-      startAutoplay();
-    }, { passive: true });
-
-    function handleSwipe() {
-      const diff = touchStartX - touchEndX;
-      
-      if (Math.abs(diff) > swipeThreshold) {
-        if (diff > 0) {
-          nextSlide();
-        } else {
-          prevSlide();
-        }
-      }
-    }
-
-    // Start autoplay
+    // Solo autoplay: sin pausa por hover ni swipe manual
     startAutoplay();
   }
 
