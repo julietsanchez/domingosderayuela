@@ -179,6 +179,35 @@
     startAutoplay();
   }
 
+  // ===== Galería: quitar slides con imagen rota (misma src en ambas mitades del carril) =====
+  (function initGaleriaBrokenImageGuard() {
+    if (!isHomePage) return;
+    const track = document.querySelector('.galeria__track');
+    if (!track) return;
+
+    function removeSlidesWithSrc(failedSrc) {
+      if (!failedSrc) return;
+      track.querySelectorAll('.galeria__slide').forEach(function(slide) {
+        const im = slide.querySelector('img');
+        if (im && im.getAttribute('src') === failedSrc) {
+          slide.remove();
+        }
+      });
+    }
+
+    track.querySelectorAll('.galeria__slide img').forEach(function(img) {
+      const src = img.getAttribute('src');
+      if (!src) return;
+      if (img.complete && img.naturalWidth === 0) {
+        removeSlidesWithSrc(src);
+        return;
+      }
+      img.addEventListener('error', function onGalleryImgError() {
+        removeSlidesWithSrc(src);
+      }, { once: true });
+    });
+  })();
+
   // ===== Form Handling =====
   const STORAGE_KEY = 'domingosDeRayuela_formData';
 
@@ -388,5 +417,36 @@
 
   // Update active link on hash change
   window.addEventListener('hashchange', setActiveNavLink);
+
+  // ===== "Quiero ayudar": toggle "Ver más / Ver menos" en cards colapsables =====
+  (function initAyudaCardToggle() {
+    const toggles = document.querySelectorAll('.ayuda-card__toggle');
+    if (!toggles.length) return;
+
+    toggles.forEach(function(btn) {
+      const targetId = btn.getAttribute('aria-controls');
+      if (!targetId) return;
+      const panel = document.getElementById(targetId);
+      if (!panel) return;
+      const labelEl = btn.querySelector('.ayuda-card__toggle-label');
+
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+        const next = !isOpen;
+
+        btn.setAttribute('aria-expanded', String(next));
+        if (next) {
+          panel.removeAttribute('hidden');
+          if (labelEl) labelEl.textContent = 'Ver menos';
+        } else {
+          panel.setAttribute('hidden', '');
+          if (labelEl) labelEl.textContent = 'Ver más';
+        }
+      });
+    });
+  })();
 
 })();

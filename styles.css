@@ -4143,39 +4143,7 @@ p { color: var(--c-ink-soft); }
   display: none;
 }
 
-/* Decoración editorial sutil: rayuela watermark + estrellitas */
-.nosotros--hero::before {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 8%;
-  right: -3%;
-  width: 220px;
-  height: 380px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='160' viewBox='0 0 80 160'%3E%3Cg fill='none' stroke='%235b7d56' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='15' y='5' width='50' height='28' rx='6'/%3E%3Crect x='15' y='38' width='23' height='24' rx='6'/%3E%3Crect x='42' y='38' width='23' height='24' rx='6'/%3E%3Crect x='15' y='67' width='50' height='24' rx='6'/%3E%3Crect x='15' y='96' width='23' height='24' rx='6'/%3E%3Crect x='42' y='96' width='23' height='24' rx='6'/%3E%3Crect x='15' y='125' width='50' height='28' rx='6'/%3E%3C/g%3E%3C/svg%3E");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.06;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.nosotros--hero::after {
-  content: '';
-  display: block;
-  position: absolute;
-  bottom: 6%;
-  left: -2%;
-  width: 180px;
-  height: 180px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cg fill='none' stroke='%23b87a6e' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M40 30c0-6 5-10 10-10s10 4 10 10c0 9-10 16-10 16s-10-7-10-16z'/%3E%3Ccircle cx='130' cy='50' r='3'/%3E%3Cpath d='M150 120l3 7h7l-5.5 4 2 7-6.5-4.5-6.5 4.5 2-7-5.5-4h7z'/%3E%3Ccircle cx='40' cy='130' r='4'/%3E%3Cpath d='M100 160l3 7h7l-5.5 4 2 7-6.5-4.5-6.5 4.5 2-7-5.5-4h7z'/%3E%3C/g%3E%3C/svg%3E");
-  background-size: contain;
-  background-repeat: no-repeat;
-  opacity: 0.18;
-  pointer-events: none;
-  z-index: 0;
-}
+/* Rayuela decorativa: ver capa v3 (.nosotros--hero::before / ::after) */
 
 .nosotros .container { position: relative; z-index: 1; }
 
@@ -4970,7 +4938,6 @@ p { color: var(--c-ink-soft); }
     padding-bottom: clamp(3rem, 9vw, 4.5rem);
   }
 
-  .nosotros--hero::before,
   .nosotros--hero::after { display: none; }
 
   .nosotros__heading { margin-bottom: 2rem; }
@@ -5464,38 +5431,36 @@ p { color: var(--c-ink-soft); }
   overflow: hidden;
 }
 
-/* Decoración: rayuela watermark verde fresco + estrellitas amarillas */
+/* Decoración: rayuela reconocible (Cielo → 1–8 → Tierra + piedra), asset local */
+/* Decoración: rayuela real (assets/images/rayuela svg.webp) teñida con verde marca */
 .nosotros--hero::before {
   content: '';
   display: block;
   position: absolute;
-  top: 8%;
-  right: -3%;
-  width: 220px;
-  height: 380px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='160' viewBox='0 0 80 160'%3E%3Cg fill='none' stroke='%236fb04f' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='15' y='5' width='50' height='28' rx='6'/%3E%3Crect x='15' y='38' width='23' height='24' rx='6'/%3E%3Crect x='42' y='38' width='23' height='24' rx='6'/%3E%3Crect x='15' y='67' width='50' height='24' rx='6'/%3E%3Crect x='15' y='96' width='23' height='24' rx='6'/%3E%3Crect x='42' y='96' width='23' height='24' rx='6'/%3E%3Crect x='15' y='125' width='50' height='28' rx='6'/%3E%3C/g%3E%3C/svg%3E");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.10;
+  top: clamp(6%, 10vw, 14%);
+  left: max(0.25rem, 1.5%);
+  right: auto;
+  width: min(200px, 16vw);
+  height: min(480px, 52vh);
+  max-height: 520px;
+  background-color: var(--c-green);
+  -webkit-mask-image: url("./assets/images/rayuela%20svg.webp");
+          mask-image: url("./assets/images/rayuela%20svg.webp");
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-position: left top;
+          mask-position: left top;
+  opacity: 0.22;
   pointer-events: none;
   z-index: 0;
 }
 
+/* Quitamos el segundo decorativo (estrellas) para que destaque solo la rayuela */
 .nosotros--hero::after {
-  content: '';
-  display: block;
-  position: absolute;
-  bottom: 6%;
-  left: -2%;
-  width: 200px;
-  height: 200px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cg fill='none' stroke='%23f8c8d3' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M40 30c0-6 5-10 10-10s10 4 10 10c0 9-10 16-10 16s-10-7-10-16z'/%3E%3Ccircle cx='130' cy='50' r='4' fill='%23ffd5b4' stroke='none'/%3E%3Cpath d='M150 120l3 7h7l-5.5 4 2 7-6.5-4.5-6.5 4.5 2-7-5.5-4h7z' fill='%23fde08a' stroke='none'/%3E%3Ccircle cx='40' cy='130' r='5' fill='%23d6c4ec' stroke='none'/%3E%3Cpath d='M100 160l3 7h7l-5.5 4 2 7-6.5-4.5-6.5 4.5 2-7-5.5-4h7z' fill='%23b9dde6' stroke='none'/%3E%3C/g%3E%3C/svg%3E");
-  background-size: contain;
-  background-repeat: no-repeat;
-  opacity: 0.55;
-  pointer-events: none;
-  z-index: 0;
+  content: none;
+  display: none;
 }
 
 .nosotros .container { position: relative; z-index: 1; }
@@ -6024,18 +5989,6 @@ p { color: var(--c-ink-soft); }
   box-shadow: 0 6px 16px rgba(68, 125, 44, 0.25);
 }
 
-.ayuda-card--featured .ayuda-card__cta {
-  background: linear-gradient(135deg, var(--c-green) 0%, var(--c-green-deep) 100%);
-  color: #fff;
-  border-color: var(--c-green-deep);
-  box-shadow: 0 6px 16px rgba(68, 125, 44, 0.25);
-}
-
-.ayuda-card--featured:hover .ayuda-card__cta {
-  background: var(--c-green-darker);
-  border-color: var(--c-green-darker);
-}
-
 /* ===== Contacto: vivo, no neutro ===== */
 .contacto {
   background:
@@ -6417,8 +6370,16 @@ p { color: var(--c-ink-soft); }
     padding-bottom: clamp(3rem, 9vw, 4.5rem);
   }
 
-  .nosotros--hero::before,
   .nosotros--hero::after { display: none; }
+
+  .nosotros--hero::before {
+    display: block;
+    width: min(110px, 26vw);
+    height: min(260px, 34vh);
+    opacity: 0.16;
+    left: 0.15rem;
+    top: 14%;
+  }
 
   .nosotros__heading { margin-bottom: 2rem; gap: 0.85rem; }
 
@@ -6574,3 +6535,243 @@ p { color: var(--c-ink-soft); }
 .ayuda-card:nth-child(2):hover { border-color: var(--c-green-deep); }
 .ayuda-card:nth-child(3):hover { border-color: var(--c-peach-deep); }
 
+/* === 4. Hero banner: overlay verde delicado degradado (sin negro) === */
+.carousel__overlay {
+  background:
+    linear-gradient(
+      168deg,
+      rgba(53, 92, 31, 0.55) 0%,
+      rgba(68, 125, 44, 0.38) 35%,
+      rgba(111, 176, 79, 0.30) 70%,
+      rgba(0, 143, 73, 0.42) 100%
+    );
+}
+
+/* CTA card padrinos (featured): idéntico a Donaciones / Voluntariado; anula legacy nth-child(2) y .ayuda-card--featured anteriores */
+.ayuda-options .ayuda-card--featured .ayuda-card__cta {
+  background: var(--c-shell);
+  color: var(--c-green-deep);
+  border: 2px solid var(--c-green-mint);
+  box-shadow: none;
+}
+
+.ayuda-options .ayuda-card--featured:hover .ayuda-card__cta {
+  background: var(--c-green-deep);
+  color: #fff;
+  border-color: var(--c-green-deep);
+  gap: 0.7rem;
+  box-shadow: 0 6px 16px rgba(68, 125, 44, 0.25);
+}
+
+/* Lista en card "Donaciones y talleristas" (misma voz y ritmo que la descripción) */
+.ayuda-card__list {
+  font-family: var(--font-family);
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--c-ink-soft);
+  margin: 0 0 1.25rem;
+  padding-left: 1.15rem;
+  flex-grow: 1;
+  list-style-type: disc;
+}
+
+.ayuda-card__list li {
+  margin-bottom: 0.55rem;
+  padding-left: 0.2rem;
+}
+
+.ayuda-card__list li:last-child {
+  margin-bottom: 0;
+}
+
+.ayuda-card__list strong {
+  color: var(--c-ink);
+  font-weight: 700;
+}
+
+/* ============================================================
+   AJUSTES v3.2 — "Quiero ayudar": cards más compactas
+   + colapsable solo en "Donaciones y talleristas"
+   ============================================================ */
+
+/* Padding más liviano para que las 3 cards queden más estéticas */
+.ayuda-options .ayuda-card,
+.ayuda-options .ayuda-card:nth-child(n) {
+  padding: 1.85rem 1.6rem 1.65rem;
+}
+
+.ayuda-options .ayuda-card--featured {
+  padding: 2rem 1.7rem 1.75rem;
+}
+
+/* Reducir aire interno entre bloques */
+.ayuda-options .ayuda-card__icon { margin-bottom: 1rem; }
+.ayuda-options .ayuda-card__title { margin-bottom: 0.5rem; }
+.ayuda-options .ayuda-card__description { margin-bottom: 1.1rem; }
+
+/* La card colapsable crece sola; las hermanas no se mueven */
+.ayuda-card--collapsible {
+  align-self: start;
+}
+
+.ayuda-card--collapsible .ayuda-card__description {
+  flex-grow: 0;
+}
+
+/* Bloque colapsable con detalles */
+.ayuda-card__details {
+  width: 100%;
+  margin: 0 0 1rem;
+  overflow: hidden;
+  animation: ayudaDetailsIn 0.35s ease both;
+}
+
+.ayuda-card__details[hidden] {
+  display: none;
+}
+
+.ayuda-card__details .ayuda-card__list {
+  margin: 0;
+  flex-grow: 0;
+}
+
+@keyframes ayudaDetailsIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Botón "Ver más / Ver menos" — link sutil, no compite con el CTA */
+.ayuda-card__toggle {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0 0 0.95rem;
+  padding: 0.35rem 0.1rem;
+  background: transparent;
+  border: 0;
+  color: var(--c-green-deep);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(68, 125, 44, 0.4);
+  text-decoration-thickness: 1.5px;
+  transition: color 0.25s ease, text-decoration-color 0.25s ease;
+}
+
+.ayuda-card__toggle:hover {
+  color: var(--c-green);
+  text-decoration-color: currentColor;
+}
+
+.ayuda-card__toggle:focus-visible {
+  outline: 2px solid var(--c-green);
+  outline-offset: 3px;
+  border-radius: 6px;
+  text-decoration-color: currentColor;
+}
+
+.ayuda-card__toggle-icon {
+  transition: transform 0.3s ease;
+}
+
+.ayuda-card__toggle[aria-expanded="true"] .ayuda-card__toggle-icon {
+  transform: rotate(180deg);
+}
+
+/* El CTA ahora puede ser <a>, garantizamos sin subrayado */
+.ayuda-card a.ayuda-card__cta {
+  text-decoration: none;
+}
+
+/* Reduce-motion: sin animación */
+@media (prefers-reduced-motion: reduce) {
+  .ayuda-card__details { animation: none; }
+  .ayuda-card__toggle-icon { transition: none; }
+}
+
+/* ============================================================
+   AJUSTES v3.3 — Hover por color de marca en cada CTA:
+   - Donaciones (card 1)    → AZUL
+   - Padrinos  (card 2)     → VERDE (default, sin override)
+   - Voluntariado (card 3)  → NARANJA
+   Override de la regla genérica .ayuda-card:hover .ayuda-card__cta
+   ============================================================ */
+
+:root {
+  --c-cta-blue:        #2f8fcf;
+  --c-cta-blue-deep:   #1f6fa8;
+  --c-cta-blue-shadow: rgba(31, 111, 168, 0.28);
+
+  --c-cta-orange:        #ef7a3a;
+  --c-cta-orange-deep:   #c95f24;
+  --c-cta-orange-shadow: rgba(201, 95, 36, 0.28);
+}
+
+/* Donaciones (card 1) — hover AZUL */
+.ayuda-options .ayuda-card:nth-child(1):hover .ayuda-card__cta {
+  background: var(--c-cta-blue);
+  color: #fff;
+  border-color: var(--c-cta-blue-deep);
+  box-shadow: 0 6px 16px var(--c-cta-blue-shadow);
+}
+
+.ayuda-options .ayuda-card:nth-child(1):hover {
+  border-color: var(--c-cta-blue);
+}
+
+.ayuda-options .ayuda-card:nth-child(1):hover .ayuda-card__icon {
+  background: var(--c-cta-blue);
+  color: #fff;
+  border-color: var(--c-cta-blue);
+}
+
+/* Voluntariado (card 3) — hover NARANJA */
+.ayuda-options .ayuda-card:nth-child(3):hover .ayuda-card__cta {
+  background: var(--c-cta-orange);
+  color: #fff;
+  border-color: var(--c-cta-orange-deep);
+  box-shadow: 0 6px 16px var(--c-cta-orange-shadow);
+}
+
+.ayuda-options .ayuda-card:nth-child(3):hover {
+  border-color: var(--c-cta-orange);
+}
+
+.ayuda-options .ayuda-card:nth-child(3):hover .ayuda-card__icon {
+  background: var(--c-cta-orange);
+  color: #fff;
+  border-color: var(--c-cta-orange);
+}
+
+/* ============================================================
+   AJUSTES v3.4 — CTAs alineados: centrados y del mismo largo
+   ============================================================ */
+
+/* Padding lateral idéntico en las 3 cards (incluida la featured) */
+.ayuda-options .ayuda-card,
+.ayuda-options .ayuda-card:nth-child(n),
+.ayuda-options .ayuda-card--featured {
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+}
+
+/* CTAs: ocupan todo el ancho de su card y el texto va centrado */
+.ayuda-options .ayuda-card__cta {
+  align-self: stretch;
+  width: auto;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* En desktop, el CTA destacado mantiene la misma regla; el min-height
+   del botón se conserva para que los 3 sean visualmente idénticos */
+.ayuda-options .ayuda-card--featured .ayuda-card__cta {
+  align-self: stretch;
+  justify-content: center;
+}
