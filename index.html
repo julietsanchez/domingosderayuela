@@ -34,7 +34,8 @@
       <nav class="header__nav" id="navMenu" aria-label="Navegación principal">
         <ul class="header__nav-list">
           <li><a href="#inicio" class="header__nav-link">Inicio</a></li>
-          <li><a href="#nosotros" class="header__nav-link">Nosotros</a></li>
+          <li><a href="nosotros.html" class="header__nav-link">Nosotros</a></li>
+          <li><a href="blog.html" class="header__nav-link">Blog</a></li>
           <li><a href="#quiero-ayudar" class="header__nav-link header__nav-link--cta">Quiero ayudar</a></li>
         </ul>
       </nav>
@@ -402,7 +403,8 @@
         <nav class="footer__nav" aria-label="Navegación del footer">
           <ul class="footer__nav-list">
             <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="blog.html">Blog</a></li>
             <li><a href="#quiero-ayudar">Quiero ayudar</a></li>
             <li><a href="#contacto">Contacto</a></li>
           </ul>
@@ -433,6 +435,14 @@
       </div>
     </div>
   </footer>
+
+  <!-- Botón flotante de WhatsApp (configurable desde script.js → WA_CONFIG) -->
+  <a href="#" class="wa-float" id="waFloat" aria-label="Escribinos por WhatsApp">
+    <svg class="wa-float__icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+      <path d="M19.11 17.32c-.27-.14-1.59-.78-1.84-.87-.25-.09-.43-.14-.6.14-.18.27-.69.87-.85 1.05-.16.18-.31.2-.58.07-.27-.14-1.13-.42-2.16-1.33-.8-.71-1.34-1.59-1.5-1.86-.16-.27-.02-.42.12-.55.12-.12.27-.31.4-.47.14-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.14-.6-1.45-.83-1.99-.22-.52-.44-.45-.6-.46-.16-.01-.34-.01-.52-.01-.18 0-.47.07-.71.34-.25.27-.94.92-.94 2.24 0 1.32.96 2.6 1.1 2.78.14.18 1.9 2.9 4.6 4.07.64.28 1.14.45 1.53.57.64.2 1.22.17 1.69.1.51-.07 1.59-.65 1.81-1.27.22-.62.22-1.16.16-1.27-.07-.11-.25-.18-.52-.31zM16.05 27.5h-.01c-1.94 0-3.84-.52-5.5-1.5l-.4-.23-4.08 1.07 1.09-3.98-.26-.41a10.39 10.39 0 0 1-1.59-5.54c0-5.74 4.67-10.41 10.4-10.41 2.78 0 5.39 1.08 7.36 3.05a10.34 10.34 0 0 1 3.04 7.36c0 5.74-4.67 10.41-10.4 10.41zm8.85-19.27A12.31 12.31 0 0 0 16.05 4C9.18 4 3.6 9.58 3.59 16.45c0 2.2.57 4.34 1.66 6.23L3.5 29l6.46-1.7a12.42 12.42 0 0 0 5.99 1.53h.01c6.87 0 12.45-5.58 12.46-12.45 0-3.33-1.3-6.45-3.65-8.81z"/>
+    </svg>
+    <span class="wa-float__label">Escribinos</span>
+  </a>
 
   <!-- Toast notification -->
   <div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true">

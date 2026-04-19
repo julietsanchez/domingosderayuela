@@ -12,6 +12,15 @@
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   const isHomePage = currentPage === 'index.html' || currentPage === '' || currentPage === '/';
 
+  // ===== WhatsApp Float Config =====
+  // Para activar el botón flotante, completar `phone` con el número internacional
+  // (sin "+" ni espacios, ej: "5491123456789"). Si queda vacío, el botón se
+  // muestra pero no enlaza a ningún destino real (placeholder seguro).
+  const WA_CONFIG = {
+    phone: '',
+    message: '¡Hola! Quiero saber más sobre Domingos de Rayuela.'
+  };
+
   // ===== DOM Elements =====
   const header = document.getElementById('header');
   const menuBtn = document.getElementById('menuBtn');
@@ -39,12 +48,24 @@
   const scrollThreshold = 120;
   const scrollDeltaMin = 40;
 
+  // El navbar solo se auto-oculta en la home (donde tapa el hero/carrusel).
+  // En páginas internas debe permanecer SIEMPRE visible.
+  const hasHeroCarousel = !!document.querySelector('.hero .carousel');
+
   function handleScroll() {
     if (!header) return;
 
     const currentScrollY = window.scrollY;
 
-    if (currentScrollY <= scrollThreshold) {
+    if (!hasHeroCarousel) {
+      // Páginas internas: navbar siempre visible, agregar sombra al scrollear.
+      header.classList.remove('header--hidden');
+      if (currentScrollY > scrollThreshold) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    } else if (currentScrollY <= scrollThreshold) {
       header.classList.add('header--hidden');
       header.classList.remove('scrolled');
     } else {
@@ -174,6 +195,16 @@
         });
       });
     }
+
+    // Re-aplica el slide actual al redimensionar / rotar (evita desalineos en móvil)
+    let resizeCarouselRaf = null;
+    window.addEventListener('resize', function() {
+      if (resizeCarouselRaf) cancelAnimationFrame(resizeCarouselRaf);
+      resizeCarouselRaf = requestAnimationFrame(function() {
+        resizeCarouselRaf = null;
+        goToSlide(currentSlide);
+      });
+    });
 
     // Solo autoplay: sin pausa por hover ni swipe manual
     startAutoplay();
@@ -445,6 +476,58 @@
           panel.setAttribute('hidden', '');
           if (labelEl) labelEl.textContent = 'Ver más';
         }
+      });
+    });
+  })();
+
+  // ===== Botón flotante de WhatsApp =====
+  // Configura todos los `.wa-float` (puede haber 1 por página) según WA_CONFIG.
+  // Si no hay número configurado, el botón queda como placeholder (no rompe).
+  (function initWhatsAppFloat() {
+    const buttons = document.querySelectorAll('.wa-float');
+    if (!buttons.length) return;
+
+    const rawPhone = (WA_CONFIG.phone || '').toString().replace(/\D+/g, '');
+    const message = encodeURIComponent(WA_CONFIG.message || '');
+
+    buttons.forEach(function(btn) {
+      if (rawPhone) {
+        const url = 'https://wa.me/' + rawPhone + (message ? '?text=' + message : '');
+        btn.setAttribute('href', url);
+        btn.setAttribute('target', '_blank');
+        btn.setAttribute('rel', 'noopener noreferrer');
+        btn.removeAttribute('aria-disabled');
+        btn.removeAttribute('data-placeholder');
+      } else {
+        btn.setAttribute('href', '#');
+        btn.setAttribute('aria-disabled', 'true');
+        btn.setAttribute('data-placeholder', 'true');
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          if (window && window.console && typeof window.console.info === 'function') {
+            window.console.info('[WhatsApp Float] WA_CONFIG.phone vacío. Completar en script.js.');
+          }
+        });
+      }
+    });
+  })();
+
+  // ===== Flecha "volver atrás" en páginas internas =====
+  // Si el usuario llegó directo (sin historial), se usa el href del enlace
+  // como fallback (típicamente index.html). Si tiene historial real, vuelve.
+  (function initBackLink() {
+    const links = document.querySelectorAll('[data-back]');
+    if (!links.length) return;
+
+    links.forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        // Si el navegador tiene historial real dentro de este sitio, usarlo.
+        const sameOrigin = document.referrer && document.referrer.indexOf(window.location.origin) === 0;
+        if (window.history.length > 1 && sameOrigin) {
+          e.preventDefault();
+          window.history.back();
+        }
+        // Si no, el href del propio enlace funciona como fallback.
       });
     });
   })();

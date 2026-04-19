@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Nuestra historia - Domingos de Rayuela. Cómo empezó este voluntariado que acompaña cada domingo a niñas de un hogar con juegos, presencia y ternura.">
+
+  <!-- SEO & Open Graph -->
+  <meta property="og:title" content="Nosotros - Domingos de Rayuela">
+  <meta property="og:description" content="Cómo empezó este voluntariado, qué nos mueve y quiénes somos. La historia detrás de cada domingo.">
+  <meta property="og:image" content="/assets/og-image.jpg">
+  <meta property="og:url" content="https://domingosderayuela.org/nosotros">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <title>Nosotros | Domingos de Rayuela</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Baloo+2:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="header__container">
+      <a href="index.html" class="header__logo" aria-label="Ir al inicio">
+        <img src="./logo2.png" alt="Domingos de Rayuela" class="header__logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+        <span class="header__logo-text" style="display: none;">Domingos de Rayuela</span>
+      </a>
+
+      <button class="header__menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">
+        <span class="header__menu-icon"></span>
+      </button>
+
+      <nav class="header__nav" id="navMenu" aria-label="Navegación principal">
+        <ul class="header__nav-list">
+          <li><a href="index.html#inicio" class="header__nav-link">Inicio</a></li>
+          <li><a href="nosotros.html" class="header__nav-link header__nav-link--active">Nosotros</a></li>
+          <li><a href="blog.html" class="header__nav-link">Blog</a></li>
+          <li><a href="index.html#quiero-ayudar" class="header__nav-link header__nav-link--cta">Quiero ayudar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Secundario -->
+    <section class="hero-secondary" aria-label="Nosotros">
+      <div class="container">
+        <a href="index.html" class="back-link" data-back aria-label="Volver a la página anterior">
+          <svg class="back-link__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          Volver
+        </a>
+        <nav class="breadcrumb" aria-label="Navegación de migas de pan">
+          <a href="index.html">Inicio</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Nosotros</span>
+        </nav>
+        <h1 class="hero-secondary__title">Nosotros</h1>
+        <p class="hero-secondary__subtitle">Un grupo de personas comunes eligiendo el mismo domingo, semana tras semana.</p>
+      </div>
+    </section>
+
+    <!-- Historia -->
+    <section class="section about-story" aria-labelledby="historia-title">
+      <div class="container">
+        <header class="nosotros__heading">
+          <span class="section__eyebrow" aria-hidden="true">Nuestra historia</span>
+          <h2 class="section__title section__title--center" id="historia-title">Cómo empezó todo</h2>
+        </header>
+
+        <div class="about-story__container">
+          <p class="about-story__lead">
+            Domingos de Rayuela empezó casi sin querer, un domingo de 2018, con un grupo chico de personas que sintió que tenía tiempo para regalar y ganas de hacerlo cerca.
+          </p>
+
+          <p class="about-story__paragraph">
+            Fuimos a un hogar a jugar un rato, a merendar y a escuchar. Al domingo siguiente volvimos. Y al otro también. Lo que arrancó como una visita se transformó, sin darnos cuenta, en un compromiso que ya lleva años.
+          </p>
+
+          <p class="about-story__paragraph">
+            Hoy somos un voluntariado que acompaña a <strong>niñas de 6 a 12 años</strong> que viven en un hogar y atraviesan procesos de revinculación familiar o adopción. No hacemos magia, no resolvemos lo grande. Pero estamos. Cada domingo. Con juegos, con meriendas, con presencia en los cumpleaños, en los inicios de clase, en los días que parecen comunes y en realidad no lo son.
+          </p>
+
+          <p class="about-story__paragraph">
+            Creemos que la infancia merece domingos buenos. Que los recuerdos felices también se construyen en los detalles chiquitos: una ronda de cartas, una torta compartida, alguien que escucha sin apuro. Por eso seguimos viniendo, sosteniendo lo que parece simple y en realidad es lo más importante.
+          </p>
+
+          <p class="about-story__paragraph">
+            Esto somos: gente común, con profesiones distintas, edades distintas y vidas distintas, eligiendo el mismo domingo. Si lo leés y algo te resuena, este lugar también puede ser para vos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pilares / Espíritu -->
+    <section class="section about-pillars" aria-labelledby="pilares-title">
+      <div class="container">
+        <header class="nosotros__heading">
+          <span class="section__eyebrow" aria-hidden="true">Lo que nos sostiene</span>
+          <h2 class="section__title section__title--center" id="pilares-title">Misión y espíritu</h2>
+          <p class="section__lead">
+            No hace falta hacer cosas grandes para cambiar un domingo. Estos son los tres acuerdos invisibles que nos guían cada semana.
+          </p>
+        </header>
+
+        <div class="about-pillars__grid">
+          <article class="about-pillar">
+            <div class="about-pillar__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+            </div>
+            <h3 class="about-pillar__title">Presencia</h3>
+            <p class="about-pillar__text">
+              Estar es nuestro principal aporte. Escuchar, mirar, preguntar el nombre. La presencia constante construye un vínculo que, con el tiempo, se vuelve cuidado.
+            </p>
+          </article>
+
+          <article class="about-pillar">
+            <div class="about-pillar__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+                <path d="M7 12h.01"></path>
+                <path d="M12 12h.01"></path>
+                <path d="M17 12h.01"></path>
+              </svg>
+            </div>
+            <h3 class="about-pillar__title">Juego</h3>
+            <p class="about-pillar__text">
+              Jugar es serio. Es donde aparecen la risa, la confianza y los recuerdos que después quedan. Por eso pensamos cada domingo desde ahí: el juego primero.
+            </p>
+          </article>
+
+          <article class="about-pillar">
+            <div class="about-pillar__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9"></circle>
+                <polyline points="12 7 12 12 15 14"></polyline>
+              </svg>
+            </div>
+            <h3 class="about-pillar__title">Continuidad</h3>
+            <p class="about-pillar__text">
+              No vamos un domingo: vamos todos los domingos. Esa continuidad es lo que sostiene el lazo, y es también el compromiso que nos pedimos entre nosotras.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Equipo -->
+    <section class="section about-team" aria-labelledby="equipo-title">
+      <div class="container">
+        <header class="nosotros__heading">
+          <span class="section__eyebrow" aria-hidden="true">Quiénes somos</span>
+          <h2 class="section__title section__title--center" id="equipo-title">Nuestro equipo</h2>
+          <p class="about-team__intro">
+            Somos personas con profesiones, historias y agendas distintas, eligiendo el mismo domingo. Ellas y ellos son parte del equipo que hace posible cada encuentro.
+          </p>
+        </header>
+
+        <div class="about-team__grid">
+          <article class="team-card">
+            <div class="team-card__avatar" aria-hidden="true">
+              <span class="team-card__avatar--placeholder">MV</span>
+            </div>
+            <h3 class="team-card__name">Mariana Vega</h3>
+            <p class="team-card__role">Trabajadora social</p>
+            <span class="team-card__time">7 años en el voluntariado</span>
+          </article>
+
+          <article class="team-card">
+            <div class="team-card__avatar" aria-hidden="true">
+              <span class="team-card__avatar--placeholder">JS</span>
+            </div>
+            <h3 class="team-card__name">Julieta Sánchez</h3>
+            <p class="team-card__role">Diseñadora UX</p>
+            <span class="team-card__time">5 años en el voluntariado</span>
+          </article>
+
+          <article class="team-card">
+            <div class="team-card__avatar" aria-hidden="true">
+              <span class="team-card__avatar--placeholder">CR</span>
+            </div>
+            <h3 class="team-card__name">Camila Rodríguez</h3>
+            <p class="team-card__role">Maestra jardinera</p>
+            <span class="team-card__time">6 años en el voluntariado</span>
+          </article>
+
+          <article class="team-card">
+            <div class="team-card__avatar" aria-hidden="true">
+              <span class="team-card__avatar--placeholder">FA</span>
+            </div>
+            <h3 class="team-card__name">Florencia Álvarez</h3>
+            <p class="team-card__role">Psicopedagoga</p>
+            <span class="team-card__time">4 años en el voluntariado</span>
+          </article>
+
+          <article class="team-card">
+            <div class="team-card__avatar" aria-hidden="true">
+              <span class="team-card__avatar--placeholder">LM</span>
+            </div>
+            <h3 class="team-card__name">Lucía Méndez</h3>
+            <p class="team-card__role">Estudiante de Psicología</p>
+            <span class="team-card__time">2 años en el voluntariado</span>
+          </article>
+
+          <article class="team-card">
+            <div class="team-card__avatar" aria-hidden="true">
+              <span class="team-card__avatar--placeholder">VG</span>
+            </div>
+            <h3 class="team-card__name">Valentina Gómez</h3>
+            <p class="team-card__role">Comunicadora social</p>
+            <span class="team-card__time">3 años en el voluntariado</span>
+          </article>
+
+          <article class="team-card">
+            <div class="team-card__avatar" aria-hidden="true">
+              <span class="team-card__avatar--placeholder">SP</span>
+            </div>
+            <h3 class="team-card__name">Sofía Pereyra</h3>
+            <p class="team-card__role">Profesora de música</p>
+            <span class="team-card__time">5 años en el voluntariado</span>
+          </article>
+
+          <article class="team-card">
+            <div class="team-card__avatar" aria-hidden="true">
+              <span class="team-card__avatar--placeholder">AB</span>
+            </div>
+            <h3 class="team-card__name">Agustina Benítez</h3>
+            <p class="team-card__role">Médica pediatra</p>
+            <span class="team-card__time">6 años en el voluntariado</span>
+          </article>
+
+          <article class="team-card">
+            <div class="team-card__avatar" aria-hidden="true">
+              <span class="team-card__avatar--placeholder">PT</span>
+            </div>
+            <h3 class="team-card__name">Paula Torres</h3>
+            <p class="team-card__role">Abogada</p>
+            <span class="team-card__time">1 año en el voluntariado</span>
+          </article>
+
+          <article class="team-card">
+            <div class="team-card__avatar" aria-hidden="true">
+              <span class="team-card__avatar--placeholder">RD</span>
+            </div>
+            <h3 class="team-card__name">Rocío Domínguez</h3>
+            <p class="team-card__role">Profesora de Educación Física</p>
+            <span class="team-card__time">4 años en el voluntariado</span>
+          </article>
+
+          <article class="team-card">
+            <div class="team-card__avatar" aria-hidden="true">
+              <span class="team-card__avatar--placeholder">MN</span>
+            </div>
+            <h3 class="team-card__name">Micaela Navarro</h3>
+            <p class="team-card__role">Diseñadora gráfica</p>
+            <span class="team-card__time">3 años en el voluntariado</span>
+          </article>
+
+          <article class="team-card">
+            <div class="team-card__avatar" aria-hidden="true">
+              <span class="team-card__avatar--placeholder">EC</span>
+            </div>
+            <h3 class="team-card__name">Emilia Castro</h3>
+            <p class="team-card__role">Estudiante de Trabajo Social</p>
+            <span class="team-card__time">2 años en el voluntariado</span>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo-link">
+            <img src="./logorayuela.png" alt="Domingos de Rayuela" class="footer__logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+            <span class="footer__logo-text" style="display: none;">Domingos de Rayuela</span>
+          </a>
+          <p class="footer__tagline">Transformamos domingos en recuerdos felices</p>
+        </div>
+        <nav class="footer__nav" aria-label="Navegación del footer">
+          <ul class="footer__nav-list">
+            <li><a href="index.html#inicio">Inicio</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="index.html#quiero-ayudar">Quiero ayudar</a></li>
+            <li><a href="index.html#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+        <div class="footer__social">
+          <a href="https://wa.me/5491123456789" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+            </svg>
+          </a>
+          <a href="https://instagram.com/domingosderayuela" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="mailto:hola@domingosderayuela.org" class="footer__social-link" aria-label="Email">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Domingos de Rayuela. Sin fines de lucro.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botón flotante de WhatsApp (configurable desde script.js → WA_CONFIG) -->
+  <a href="#" class="wa-float" id="waFloat" aria-label="Escribinos por WhatsApp">
+    <svg class="wa-float__icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+      <path d="M19.11 17.32c-.27-.14-1.59-.78-1.84-.87-.25-.09-.43-.14-.6.14-.18.27-.69.87-.85 1.05-.16.18-.31.2-.58.07-.27-.14-1.13-.42-2.16-1.33-.8-.71-1.34-1.59-1.5-1.86-.16-.27-.02-.42.12-.55.12-.12.27-.31.4-.47.14-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.14-.6-1.45-.83-1.99-.22-.52-.44-.45-.6-.46-.16-.01-.34-.01-.52-.01-.18 0-.47.07-.71.34-.25.27-.94.92-.94 2.24 0 1.32.96 2.6 1.1 2.78.14.18 1.9 2.9 4.6 4.07.64.28 1.14.45 1.53.57.64.2 1.22.17 1.69.1.51-.07 1.59-.65 1.81-1.27.22-.62.22-1.16.16-1.27-.07-.11-.25-.18-.52-.31zM16.05 27.5h-.01c-1.94 0-3.84-.52-5.5-1.5l-.4-.23-4.08 1.07 1.09-3.98-.26-.41a10.39 10.39 0 0 1-1.59-5.54c0-5.74 4.67-10.41 10.4-10.41 2.78 0 5.39 1.08 7.36 3.05a10.34 10.34 0 0 1 3.04 7.36c0 5.74-4.67 10.41-10.4 10.41zm8.85-19.27A12.31 12.31 0 0 0 16.05 4C9.18 4 3.6 9.58 3.59 16.45c0 2.2.57 4.34 1.66 6.23L3.5 29l6.46-1.7a12.42 12.42 0 0 0 5.99 1.53h.01c6.87 0 12.45-5.58 12.46-12.45 0-3.33-1.3-6.45-3.65-8.81z"/>
+    </svg>
+    <span class="wa-float__label">Escribinos</span>
+  </a>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast__content">
+      <svg class="toast__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+      </svg>
+      <span class="toast__message" id="toastMessage"></span>
+    </div>
+    <button class="toast__close" id="toastClose" aria-label="Cerrar notificación">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

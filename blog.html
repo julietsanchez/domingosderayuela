@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="Programa de Voluntariado - Domingos de Rayuela. Sumate a compartir tiempo y presencia con las niñas del hogar. No hace falta experiencia.">
-  
+  <meta name="description" content="Blog - Domingos de Rayuela. Historias, reflexiones y notas desde el voluntariado. Próximamente.">
+
   <!-- SEO & Open Graph -->
-  <meta property="og:title" content="Programa de Voluntariado - Domingos de Rayuela">
-  <meta property="og:description" content="Sumate a compartir tiempo y presencia con las niñas del hogar. No hace falta experiencia.">
+  <meta property="og:title" content="Blog - Domingos de Rayuela">
+  <meta property="og:description" content="Historias, reflexiones y notas desde el voluntariado.">
   <meta property="og:image" content="/assets/og-image.jpg">
-  <meta property="og:url" content="https://domingosderayuela.org/voluntariado">
+  <meta property="og:url" content="https://domingosderayuela.org/blog">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  
-  <title>Programa de Voluntariado | Domingos de Rayuela</title>
-  
+
+  <title>Blog | Domingos de Rayuela</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Baloo+2:wght@600;700&display=swap" rel="stylesheet">
@@ -25,19 +25,19 @@
   <header class="header" id="header">
     <div class="header__container">
       <a href="index.html" class="header__logo" aria-label="Ir al inicio">
-        <img src="./logorayuela.png" alt="Domingos de Rayuela" class="header__logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+        <img src="./logo2.png" alt="Domingos de Rayuela" class="header__logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
         <span class="header__logo-text" style="display: none;">Domingos de Rayuela</span>
       </a>
-      
+
       <button class="header__menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">
         <span class="header__menu-icon"></span>
       </button>
-      
+
       <nav class="header__nav" id="navMenu" aria-label="Navegación principal">
         <ul class="header__nav-list">
           <li><a href="index.html#inicio" class="header__nav-link">Inicio</a></li>
           <li><a href="nosotros.html" class="header__nav-link">Nosotros</a></li>
-          <li><a href="blog.html" class="header__nav-link">Blog</a></li>
+          <li><a href="blog.html" class="header__nav-link header__nav-link--active">Blog</a></li>
           <li><a href="index.html#quiero-ayudar" class="header__nav-link header__nav-link--cta">Quiero ayudar</a></li>
         </ul>
       </nav>
@@ -46,9 +46,9 @@
 
   <main>
     <!-- Hero Secundario -->
-    <section class="hero-secondary" aria-label="Programa de Voluntariado">
+    <section class="hero-secondary" aria-label="Blog">
       <div class="container">
-        <a href="index.html#quiero-ayudar" class="back-link" data-back aria-label="Volver a la página anterior">
+        <a href="index.html" class="back-link" data-back aria-label="Volver a la página anterior">
           <svg class="back-link__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <line x1="19" y1="12" x2="5" y2="12"></line>
             <polyline points="12 19 5 12 12 5"></polyline>
@@ -58,119 +58,62 @@
         <nav class="breadcrumb" aria-label="Navegación de migas de pan">
           <a href="index.html">Inicio</a>
           <span aria-hidden="true">/</span>
-          <a href="index.html#quiero-ayudar">Quiero ayudar</a>
-          <span aria-hidden="true">/</span>
-          <span aria-current="page">Programa de Voluntariado</span>
+          <span aria-current="page">Blog</span>
         </nav>
-        <h1 class="hero-secondary__title">Tu ayuda se transforma en domingos más lindos</h1>
-        <p class="hero-secondary__subtitle">Elegí la forma que mejor se adapte a vos. Cualquier aporte suma.</p>
+        <h1 class="hero-secondary__title">Blog</h1>
+        <p class="hero-secondary__subtitle">Historias, reflexiones y notas desde nuestros domingos.</p>
       </div>
     </section>
 
-    <!-- Contenido Principal -->
-    <section class="section page-content">
+    <!-- Estado vacío -->
+    <section class="section blog-empty" aria-labelledby="blog-empty-title">
       <div class="container">
-        <div class="page-content__grid">
-          <!-- Info Principal -->
-          <div class="page-content__main">
-            <div class="content-card">
-              <div class="content-card__header">
-                <div class="content-card__icon" aria-hidden="true">
-                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
-                    <line x1="9" y1="9" x2="9.01" y2="9"></line>
-                    <line x1="15" y1="9" x2="15.01" y2="9"></line>
-                  </svg>
-                </div>
-                <h2 class="content-card__title">Programa de voluntariado</h2>
-              </div>
-              
-              <p class="content-card__description">
-                Sumate a compartir tiempo y presencia. No hace falta experiencia.
-              </p>
+        <div class="blog-empty__container">
+          <!-- Ilustración suave: cuaderno + lápiz, con la paleta del sitio -->
+          <svg class="blog-empty__illustration" viewBox="0 0 220 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <!-- Halo de fondo -->
+            <ellipse cx="110" cy="170" rx="80" ry="10" fill="#00bf63" opacity="0.10"/>
 
-              <div class="content-card__details">
-                <h3 class="content-card__subtitle">¿Cómo funciona?</h3>
-                <ul class="content-card__list">
-                  <li>
-                    <span class="content-card__list-icon" aria-hidden="true">📅</span>
-                    <div>
-                      <strong>Podés sumarte 1–2 domingos al mes</strong>
-                      <span>Vos elegís tu disponibilidad</span>
-                    </div>
-                  </li>
-                  <li>
-                    <span class="content-card__list-icon" aria-hidden="true">📋</span>
-                    <div>
-                      <strong>Coordinación previa + pautas de cuidado</strong>
-                      <span>Te orientamos antes de tu primer domingo</span>
-                    </div>
-                  </li>
-                  <li>
-                    <span class="content-card__list-icon" aria-hidden="true">🤝</span>
-                    <div>
-                      <strong>Actividades simples con guía del equipo</strong>
-                      <span>Siempre vas a estar acompañado/a</span>
-                    </div>
-                  </li>
-                </ul>
-              </div>
+            <!-- Cuaderno -->
+            <rect x="50" y="48" width="120" height="120" rx="14" fill="#ffffff" stroke="#00bf63" stroke-width="2.5"/>
+            <rect x="50" y="48" width="120" height="22" rx="14" fill="#e8f8ee"/>
+            <!-- Anillas -->
+            <circle cx="78" cy="59" r="4" fill="#00a854"/>
+            <circle cx="110" cy="59" r="4" fill="#00a854"/>
+            <circle cx="142" cy="59" r="4" fill="#00a854"/>
+            <!-- Líneas de texto -->
+            <line x1="68" y1="92" x2="152" y2="92" stroke="#d4d4d4" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="68" y1="108" x2="140" y2="108" stroke="#d4d4d4" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="68" y1="124" x2="148" y2="124" stroke="#d4d4d4" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="68" y1="140" x2="120" y2="140" stroke="#d4d4d4" stroke-width="2.5" stroke-linecap="round"/>
 
-              <p class="content-card__microcopy">Coordinamos por WhatsApp para cuidar la privacidad.</p>
+            <!-- Lápiz -->
+            <g transform="rotate(28 168 142)">
+              <rect x="148" y="132" width="60" height="14" rx="3" fill="#fb923c"/>
+              <rect x="148" y="132" width="14" height="14" fill="#f472b6"/>
+              <polygon points="208,132 220,139 208,146" fill="#fde68a" stroke="#1a1a1a" stroke-width="1"/>
+              <polygon points="216,137 220,139 216,141" fill="#1a1a1a"/>
+            </g>
 
-              <a href="https://wa.me/5491123456789?text=Hola!%20Quiero%20ser%20voluntario/a" class="btn btn--primary btn--lg" target="_blank" rel="noopener noreferrer">
-                <span class="btn__emoji">💚</span> Quiero ser voluntario/a
-              </a>
-            </div>
+            <!-- Estrellitas -->
+            <g fill="#00bf63" opacity="0.7">
+              <circle cx="36" cy="60" r="3"/>
+              <circle cx="190" cy="38" r="3.5"/>
+              <circle cx="200" cy="80" r="2.5"/>
+              <circle cx="28" cy="120" r="2.5"/>
+            </g>
+          </svg>
 
-            <!-- Bloque No sé cuál elegir -->
-            <div class="help-box">
-              <h3 class="help-box__title">¿No sabés por dónde empezar?</h3>
-              <p class="help-box__text">Escribinos y te ayudamos a elegir la mejor forma de sumarte según tu tiempo y posibilidades.</p>
-              <a href="https://wa.me/5491123456789?text=Hola!%20Quiero%20ayudar%20pero%20no%20sé%20cómo" class="btn btn--outline" target="_blank" rel="noopener noreferrer">
-                Hablar por WhatsApp
-              </a>
-            </div>
-          </div>
-
-          <!-- Formulario -->
-          <div class="page-content__sidebar">
-            <form class="form" id="contactForm" novalidate>
-              <h3 class="form__title">Dejanos tus datos</h3>
-              
-              <div class="form__group">
-                <label for="nombre" class="form__label">Nombre y apellido *</label>
-                <input type="text" id="nombre" name="nombre" class="form__input" required autocomplete="name" placeholder="Tu nombre completo">
-                <span class="form__error" id="nombreError" aria-live="polite"></span>
-              </div>
-              
-              <div class="form__group">
-                <label for="whatsapp" class="form__label">WhatsApp *</label>
-                <input type="tel" id="whatsapp" name="whatsapp" class="form__input" required autocomplete="tel" placeholder="11 2345-6789" pattern="[0-9\s\-]+">
-                <span class="form__error" id="whatsappError" aria-live="polite"></span>
-              </div>
-              
-              <div class="form__group">
-                <label for="como-ayudar" class="form__label">¿Cómo querés ayudar? *</label>
-                <select id="como-ayudar" name="comoAyudar" class="form__select" required>
-                  <option value="">Seleccioná una opción</option>
-                  <option value="donaciones">Donaciones</option>
-                  <option value="padrinos">Programa de padrinos</option>
-                  <option value="voluntariado" selected>Programa de voluntariado</option>
-                  <option value="otro">Otro</option>
-                </select>
-                <span class="form__error" id="comoAyudarError" aria-live="polite"></span>
-              </div>
-              
-              <div class="form__group">
-                <label for="comentario" class="form__label">Disponibilidad o comentario</label>
-                <textarea id="comentario" name="comentario" class="form__textarea" rows="3" placeholder="Contanos tu disponibilidad horaria..."></textarea>
-              </div>
-              
-              <button type="submit" class="btn btn--primary btn--full"><span class="btn__emoji">💚</span> Enviar</button>
-            </form>
-          </div>
+          <h2 class="blog-empty__title" id="blog-empty-title">Estamos preparando las primeras historias</h2>
+          <p class="blog-empty__text">
+            Todavía no tenemos artículos publicados, pero queremos contarte cómo es un domingo desde adentro: las anécdotas, los aprendizajes, las cosas chiquitas que hacen grande al voluntariado. <strong>Volvé pronto.</strong>
+          </p>
+          <a href="index.html" class="btn btn--primary blog-empty__cta">
+            Volver al inicio
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
         </div>
       </div>
     </section>
