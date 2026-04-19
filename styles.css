@@ -5440,9 +5440,9 @@ p { color: var(--c-ink-soft); }
   top: clamp(6%, 10vw, 14%);
   left: max(0.25rem, 1.5%);
   right: auto;
-  width: min(200px, 16vw);
-  height: min(480px, 52vh);
-  max-height: 520px;
+  width: min(300px, 24vw);
+  height: min(680px, 64vh);
+  max-height: 720px;
   background-color: var(--c-green);
   -webkit-mask-image: url("./assets/images/rayuela%20svg.webp");
           mask-image: url("./assets/images/rayuela%20svg.webp");
@@ -6374,8 +6374,8 @@ p { color: var(--c-ink-soft); }
 
   .nosotros--hero::before {
     display: block;
-    width: min(110px, 26vw);
-    height: min(260px, 34vh);
+    width: min(155px, 38vw);
+    height: min(360px, 44vh);
     opacity: 0.16;
     left: 0.15rem;
     top: 14%;
