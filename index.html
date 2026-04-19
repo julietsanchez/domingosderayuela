@@ -36,7 +36,7 @@
           <li><a href="#inicio" class="header__nav-link">Inicio</a></li>
           <li><a href="nosotros.html" class="header__nav-link">Nosotros</a></li>
           <li><a href="blog.html" class="header__nav-link">Blog</a></li>
-          <li><a href="#quiero-ayudar" class="header__nav-link header__nav-link--cta">Quiero ayudar</a></li>
+          <li><a href="quieroayudar.html" class="header__nav-link header__nav-link--cta">Quiero ayudar</a></li>
         </ul>
       </nav>
     </div>
@@ -67,7 +67,7 @@
             <span class="hero__tagline-badge">Voluntariado con ternura, juego y compromiso</span>
           </p>
           <div class="hero__ctas">
-            <a href="#quiero-ayudar" class="btn btn--primary"><svg class="btn__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>Quiero ayudar</a>
+            <a href="quieroayudar.html" class="btn btn--primary"><svg class="btn__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>Quiero ayudar</a>
             <a href="#nosotros" class="btn btn--secondary">Nuestra Historia<svg class="btn__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
           </div>
         </div>
@@ -300,30 +300,20 @@
         <p class="section__subtitle">No hay una sola forma de ayudar. Cada aporte suma y hace posible que sigamos yendo cada domingo.</p>
         
         <div class="ayuda-options">
-          <!-- Donaciones y talleristas (colapsable) -->
-          <article class="ayuda-card ayuda-card--collapsible" id="ayuda-donaciones">
+          <!-- Donaciones y talleristas -->
+          <a href="quieroayudar.html?motivo=donaciones" class="ayuda-card">
             <div class="ayuda-card__icon" aria-hidden="true">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
               </svg>
             </div>
-            <h3 class="ayuda-card__title">Donaciones y talleristas</h3>
-            <p class="ayuda-card__description">Recibimos donaciones y también sumamos talleristas que quieran compartir lo que saben.</p>
-            <div class="ayuda-card__details" id="ayuda-donaciones-details" hidden>
-              <ul class="ayuda-card__list">
-                <li>Recibimos todo tipo de donaciones: útiles, juegos, meriendas y lo que quieras compartir con cariño. Cada aporte nos ayuda a sostener los domingos con más calidez.</li>
-                <li><strong>Talleristas:</strong> si tenés una profesión o te gustaría brindar un taller, también podés sumarte así. Nos encanta cuando alguien comparte lo que sabe con juego, ternura y cercanía.</li>
-              </ul>
-            </div>
-            <button type="button" class="ayuda-card__toggle" aria-expanded="false" aria-controls="ayuda-donaciones-details">
-              <span class="ayuda-card__toggle-label">Ver más</span>
-              <svg class="ayuda-card__toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
-            </button>
-            <a href="donaciones.html" class="ayuda-card__cta">Quiero donar <span aria-hidden="true">→</span></a>
-          </article>
+            <h3 class="ayuda-card__title">Donaciones</h3>
+            <p class="ayuda-card__description">Recibimos donaciones y también sumamos talleristas que quieran compartir lo que saben con las niñas.</p>
+            <span class="ayuda-card__cta">Quiero donar <span aria-hidden="true">→</span></span>
+          </a>
 
           <!-- Programa de padrinos -->
-          <a href="padrinos.html" class="ayuda-card ayuda-card--featured">
+          <a href="quieroayudar.html?motivo=programa-de-padrinos" class="ayuda-card ayuda-card--featured">
             <div class="ayuda-card__icon" aria-hidden="true">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
@@ -338,7 +328,7 @@
           </a>
 
           <!-- Programa de voluntariado -->
-          <a href="voluntariado.html" class="ayuda-card">
+          <a href="quieroayudar.html?motivo=programa-de-voluntariado" class="ayuda-card">
             <div class="ayuda-card__icon" aria-hidden="true">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <circle cx="12" cy="12" r="10"></circle>
@@ -405,7 +395,7 @@
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="nosotros.html">Nosotros</a></li>
             <li><a href="blog.html">Blog</a></li>
-            <li><a href="#quiero-ayudar">Quiero ayudar</a></li>
+            <li><a href="quieroayudar.html">Quiero ayudar</a></li>
             <li><a href="#contacto">Contacto</a></li>
           </ul>
         </nav>
