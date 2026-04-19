@@ -7656,6 +7656,7 @@ p { color: var(--c-ink-soft); }
 
 /* ---------- Formulario único ---------- */
 .quiero-ayudar-page__form-wrap {
+  position: relative;
   max-width: 760px;
   margin: 0 auto;
 }
@@ -7794,4 +7795,37 @@ p { color: var(--c-ink-soft); }
   .form-success__cta {
     width: 100%;
   }
+}
+
+/* ---------- Quiero ayudar: feedback de envío + honeypot + estado loading ---------- */
+.form-submit-feedback {
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md) var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+}
+
+.form-submit-feedback--error {
+  background: #fff5f5;
+  border: 1px solid #f5c2c7;
+  color: #842029;
+}
+
+.form__hp {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.btn__loading {
+  font-weight: 700;
+}
+
+#ayudaFormSubmit:disabled {
+  opacity: 0.85;
+  cursor: not-allowed;
 }

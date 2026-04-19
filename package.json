@@ -1,0 +1,16 @@
+{
+  "name": "domingos-de-rayuela",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sitio estático Domingos de Rayuela + funciones serverless en Vercel",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test tests/quieroayudar-mail-utils.test.js",
+    "verify:env": "node scripts/verify-quieroayudar-env.js"
+  },
+  "dependencies": {
+    "resend": "^4.0.1"
+  }
+}
