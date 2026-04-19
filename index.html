@@ -46,11 +46,14 @@
     <section class="hero" id="inicio" aria-label="Banner principal">
       <div class="carousel" id="carousel" aria-roledescription="carrusel" aria-label="Imágenes de nuestras actividades">
         <div class="carousel__track" id="carouselTrack">
-          <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="1 de 2">
-            <img src="./imagen1.png" alt="Niñas jugando en el hogar" class="carousel__image" loading="eager">
+          <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="1 de 3">
+            <img src="./assets/images/voluntarias1.jpeg" alt="Voluntarias en actividades con las niñas" class="carousel__image" loading="eager">
           </div>
-          <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="2 de 2">
-            <img src="./imagen2.png" alt="Voluntarios compartiendo la merienda" class="carousel__image" loading="lazy">
+          <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="2 de 3">
+            <img src="./assets/images/voluntarias2.jpeg" alt="Voluntarias en actividades con las niñas" class="carousel__image" loading="lazy">
+          </div>
+          <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="3 de 3">
+            <img src="./assets/images/voluntarias5.jpeg" alt="Voluntarias en actividades con las niñas" class="carousel__image" loading="lazy">
           </div>
         </div>
         
@@ -59,11 +62,12 @@
         <div class="carousel__content">
           <img src="./logorayuela.png" alt="Domingos de Rayuela" class="hero__logo">
           <h1 class="hero__title">Cada domingo puede ser el mejor recuerdo de una niña.</h1>
-          <p class="hero__tagline">Voluntariado con <span class="highlight">ternura</span>, <span class="highlight">juego</span> y <span class="highlight">compromiso</span></p>
-          <p class="hero__subtitle">En Domingos de Rayuela acompañamos a niñas de 6 a 12 años que viven en un hogar. Creamos espacios seguros para jugar, compartir una merienda y sentirse queridas. Somos una red de personas que dona tiempo y presencia.</p>
+          <p class="hero__tagline">
+            <span class="hero__tagline-badge">Voluntariado con ternura, juego y compromiso</span>
+          </p>
           <div class="hero__ctas">
             <a href="#quiero-ayudar" class="btn btn--primary"><svg class="btn__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>Quiero ayudar</a>
-            <a href="#nosotros" class="btn btn--secondary">Conocenos mejor<svg class="btn__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+            <a href="#nosotros" class="btn btn--secondary">Nuestra Historia<svg class="btn__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
           </div>
         </div>
         
@@ -75,15 +79,24 @@
     <section class="impact-strip" aria-label="Impacto del voluntariado">
       <div class="container">
         <div class="impact-strip__grid">
-          <article class="impact-strip__item">
-            <span class="impact-strip__value">+50</span>
+          <article class="impact-strip__item impact-strip__item--green">
+            <div class="impact-strip__icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="3"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><circle cx="8" cy="15" r="1.2" fill="currentColor"></circle><circle cx="12" cy="15" r="1.2" fill="currentColor"></circle><circle cx="16" cy="15" r="1.2" fill="currentColor"></circle></svg>
+            </div>
+            <span class="impact-strip__value">+200</span>
             <p class="impact-strip__label">Domingos compartidos</p>
           </article>
-          <article class="impact-strip__item">
-            <span class="impact-strip__value">6-12</span>
-            <p class="impact-strip__label">Años de las niñas</p>
+          <article class="impact-strip__item impact-strip__item--yellow">
+            <div class="impact-strip__icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </div>
+            <span class="impact-strip__value">2018</span>
+            <p class="impact-strip__label">Año que empezamos</p>
           </article>
-          <article class="impact-strip__item">
+          <article class="impact-strip__item impact-strip__item--coral">
+            <div class="impact-strip__icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            </div>
             <span class="impact-strip__value">100%</span>
             <p class="impact-strip__label">Trabajo voluntario</p>
           </article>
@@ -109,7 +122,7 @@
         </div>
 
         <div class="nosotros__grid nosotros__grid--cards">
-          <div class="nosotros__card-item">
+          <div class="nosotros__card-item" style="--card-img: url('./assets/images/voluntarias1.jpeg')">
             <div class="nosotros__card-icon" aria-hidden="true">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="2" y="6" width="20" height="12" rx="2"></rect>
@@ -120,7 +133,7 @@
             </div>
             <span class="nosotros__card-text">Jugamos juntas</span>
           </div>
-          <div class="nosotros__card-item">
+          <div class="nosotros__card-item" style="--card-img: url('./assets/images/voluntarias2.jpeg')">
             <div class="nosotros__card-icon" aria-hidden="true">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M17 8h1a4 4 0 1 1 0 8h-1"></path>
@@ -132,7 +145,7 @@
             </div>
             <span class="nosotros__card-text">Compartimos la merienda</span>
           </div>
-          <div class="nosotros__card-item">
+          <div class="nosotros__card-item" style="--card-img: url('./assets/images/voluntarias5.jpeg')">
             <div class="nosotros__card-icon" aria-hidden="true">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
@@ -141,7 +154,7 @@
             </div>
             <span class="nosotros__card-text">Celebramos fechas importantes</span>
           </div>
-          <div class="nosotros__card-item">
+          <div class="nosotros__card-item" style="--card-img: url('./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.11.07.jpeg')">
             <div class="nosotros__card-icon" aria-hidden="true">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
@@ -149,7 +162,7 @@
             </div>
             <span class="nosotros__card-text">Acompañamos procesos</span>
           </div>
-          <div class="nosotros__card-item">
+          <div class="nosotros__card-item" style="--card-img: url('./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58.jpeg')">
             <div class="nosotros__card-icon" aria-hidden="true">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
@@ -160,7 +173,7 @@
             </div>
             <span class="nosotros__card-text">Proponemos actividades</span>
           </div>
-          <div class="nosotros__card-item">
+          <div class="nosotros__card-item" style="--card-img: url('./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.11.07%20(4).jpeg')">
             <div class="nosotros__card-icon" aria-hidden="true">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="20 12 20 22 4 22 4 12"></polyline>
@@ -183,10 +196,68 @@
         <p class="section__subtitle section__subtitle--italic">Cuando alguien viene a jugar, el domingo se siente distinto.</p>
         <div class="galeria__wrapper" aria-hidden="true">
           <div class="galeria__track">
-            <div class="galeria__slide"><img src="./imagen1.png" alt="Momento compartido"></div>
-            <div class="galeria__slide"><img src="./imagen2.png" alt="Momento compartido"></div>
-            <div class="galeria__slide"><img src="./imagen1.png" alt="Momento compartido"></div>
-            <div class="galeria__slide"><img src="./imagen2.png" alt="Momento compartido"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.50%20%281%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.50%20%282%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.51%20%281%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.51%20%283%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.51.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.52%20%281%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.52%20%282%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.52%20%283%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.52.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.56.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.57%20%281%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.32.34%20%281%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.11.07%20%281%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.11.07%20%282%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.11.07%20%283%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.11.07%20%284%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.11.07.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58%20%281%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58%20%282%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58%20%283%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58%20%284%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58%20%285%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58%20%286%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58%20%287%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58%20%288%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/voluntarias1.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/voluntarias2.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/voluntarias3.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/voluntarias4.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/voluntarias5.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.50%20%281%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.50%20%282%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.51%20%281%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.51%20%283%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.51.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.52%20%281%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.52%20%282%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.52%20%283%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.52.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.56.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.57%20%281%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.32.34%20%281%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.11.07%20%281%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.11.07%20%282%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.11.07%20%283%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.11.07%20%284%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.11.07.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58%20%281%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58%20%282%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58%20%283%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58%20%284%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58%20%285%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58%20%286%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58%20%287%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58%20%288%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/voluntarias1.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/voluntarias2.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/voluntarias3.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/voluntarias4.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+            <div class="galeria__slide"><img src="./assets/images/voluntarias5.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
           </div>
         </div>
       </div>
