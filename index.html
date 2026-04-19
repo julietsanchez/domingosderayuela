@@ -17,7 +17,7 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Baloo+2:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..700,100;1,9..144,400..600,100&family=Nunito:wght@400;500;600;700;800&family=Baloo+2:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -105,86 +105,109 @@
     </section>
 
     <!-- ¿Qué hacemos? -->
-    <section class="section nosotros" id="nosotros" aria-labelledby="nosotros-title">
+    <section class="section nosotros nosotros--hero" id="nosotros" aria-labelledby="nosotros-title">
       <div class="container">
-        <h2 class="section__title section__title--center" id="nosotros-title">¿Qué hacemos?</h2>
-        
-        <div class="nosotros__content">
-          <p class="nosotros__text nosotros__text--lead">
-            Somos Domingos de Rayuela, un grupo de personas que cree que la presencia cambia historias.
+        <header class="nosotros__heading">
+          <span class="section__eyebrow" aria-hidden="true">Nuestro domingo</span>
+          <h2 class="section__title section__title--center section__title--xl" id="nosotros-title">¿Qué hacemos?</h2>
+          <p class="section__lead">
+            Somos un grupo de personas que cree que la presencia cambia historias. Cada domingo acompañamos lo simple: jugar, escuchar, merendar, celebrar.
           </p>
+        </header>
+
+        <div class="nosotros__content">
           <p class="nosotros__text">
-            Cada domingo visitamos un hogar de niñas (6 a 12 años) que atraviesan situaciones de vulnerabilidad y transitan procesos de revinculación familiar o adopción.
+            Visitamos un hogar de niñas <strong>de 6 a 12 años</strong> que atraviesan situaciones de vulnerabilidad y transitan procesos de revinculación familiar o adopción.
           </p>
           <p class="nosotros__text">
             Vamos a compartir lo simple: jugar, escuchar, merendar y celebrar — porque esos momentos también construyen cuidado.
           </p>
         </div>
 
+        <p class="nosotros__grid-eyebrow" aria-hidden="true">Esto es lo que hacemos cada semana</p>
+
         <div class="nosotros__grid nosotros__grid--cards">
-          <div class="nosotros__card-item" style="--card-img: url('./assets/images/jugamos.jpeg')">
-            <div class="nosotros__card-icon" aria-hidden="true">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="6" width="20" height="12" rx="2"></rect>
-                <path d="M12 12h.01"></path>
-                <path d="M17 12h.01"></path>
-                <path d="M7 12h.01"></path>
-              </svg>
+          <article class="nosotros__card-item">
+            <div class="nosotros__card-photo" style="--card-img: url('./assets/images/jugamos.jpeg')" aria-hidden="true"></div>
+            <div class="nosotros__card-body">
+              <div class="nosotros__card-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+                  <path d="M12 12h.01"></path>
+                  <path d="M17 12h.01"></path>
+                  <path d="M7 12h.01"></path>
+                </svg>
+              </div>
+              <h3 class="nosotros__card-text">Jugamos juntas</h3>
             </div>
-            <span class="nosotros__card-text">Jugamos juntas</span>
-          </div>
-          <div class="nosotros__card-item" style="--card-img: url('./assets/images/merienda.jpeg')">
-            <div class="nosotros__card-icon" aria-hidden="true">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M17 8h1a4 4 0 1 1 0 8h-1"></path>
-                <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"></path>
-                <line x1="6" y1="2" x2="6" y2="4"></line>
-                <line x1="10" y1="2" x2="10" y2="4"></line>
-                <line x1="14" y1="2" x2="14" y2="4"></line>
-              </svg>
+          </article>
+          <article class="nosotros__card-item">
+            <div class="nosotros__card-photo" style="--card-img: url('./assets/images/merienda.jpeg')" aria-hidden="true"></div>
+            <div class="nosotros__card-body">
+              <div class="nosotros__card-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 8h1a4 4 0 1 1 0 8h-1"></path>
+                  <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"></path>
+                  <line x1="6" y1="2" x2="6" y2="4"></line>
+                  <line x1="10" y1="2" x2="10" y2="4"></line>
+                  <line x1="14" y1="2" x2="14" y2="4"></line>
+                </svg>
+              </div>
+              <h3 class="nosotros__card-text">Compartimos la merienda</h3>
             </div>
-            <span class="nosotros__card-text">Compartimos la merienda</span>
-          </div>
-          <div class="nosotros__card-item" style="--card-img: url('./assets/images/fechas%20importantes.jpeg')">
-            <div class="nosotros__card-icon" aria-hidden="true">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                <circle cx="12" cy="7" r="4"></circle>
-              </svg>
+          </article>
+          <article class="nosotros__card-item">
+            <div class="nosotros__card-photo" style="--card-img: url('./assets/images/fechas%20importantes.jpeg')" aria-hidden="true"></div>
+            <div class="nosotros__card-body">
+              <div class="nosotros__card-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </div>
+              <h3 class="nosotros__card-text">Celebramos fechas importantes</h3>
             </div>
-            <span class="nosotros__card-text">Celebramos fechas importantes</span>
-          </div>
-          <div class="nosotros__card-item" style="--card-img: url('./assets/images/procesos.jpeg')">
-            <div class="nosotros__card-icon" aria-hidden="true">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-              </svg>
+          </article>
+          <article class="nosotros__card-item">
+            <div class="nosotros__card-photo" style="--card-img: url('./assets/images/procesos.jpeg')" aria-hidden="true"></div>
+            <div class="nosotros__card-body">
+              <div class="nosotros__card-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+              </div>
+              <h3 class="nosotros__card-text">Acompañamos procesos</h3>
             </div>
-            <span class="nosotros__card-text">Acompañamos procesos</span>
-          </div>
-          <div class="nosotros__card-item" style="--card-img: url('./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58.jpeg')">
-            <div class="nosotros__card-icon" aria-hidden="true">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
-                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
-                <path d="M2 2l7.586 7.586"></path>
-                <circle cx="11" cy="11" r="2"></circle>
-              </svg>
+          </article>
+          <article class="nosotros__card-item">
+            <div class="nosotros__card-photo" style="--card-img: url('./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58.jpeg')" aria-hidden="true"></div>
+            <div class="nosotros__card-body">
+              <div class="nosotros__card-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                  <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                  <path d="M2 2l7.586 7.586"></path>
+                  <circle cx="11" cy="11" r="2"></circle>
+                </svg>
+              </div>
+              <h3 class="nosotros__card-text">Proponemos actividades</h3>
             </div>
-            <span class="nosotros__card-text">Proponemos actividades</span>
-          </div>
-          <div class="nosotros__card-item" style="--card-img: url('./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.11.07%20(4).jpeg')">
-            <div class="nosotros__card-icon" aria-hidden="true">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="20 12 20 22 4 22 4 12"></polyline>
-                <rect x="2" y="7" width="20" height="5"></rect>
-                <line x1="12" y1="22" x2="12" y2="7"></line>
-                <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
-                <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
-              </svg>
+          </article>
+          <article class="nosotros__card-item">
+            <div class="nosotros__card-photo" style="--card-img: url('./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.11.07%20(4).jpeg')" aria-hidden="true"></div>
+            <div class="nosotros__card-body">
+              <div class="nosotros__card-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 12 20 22 4 22 4 12"></polyline>
+                  <rect x="2" y="7" width="20" height="5"></rect>
+                  <line x1="12" y1="22" x2="12" y2="7"></line>
+                  <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
+                  <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+                </svg>
+              </div>
+              <h3 class="nosotros__card-text">Ayudamos según lo que haga falta</h3>
             </div>
-            <span class="nosotros__card-text">Ayudamos según lo que haga falta</span>
-          </div>
+          </article>
         </div>
       </div>
     </section>
@@ -192,6 +215,7 @@
     <!-- Nuestros momentos compartidos -->
     <section class="section galeria" id="galeria" aria-labelledby="galeria-title">
       <div class="container">
+        <span class="section__eyebrow section__eyebrow--center" aria-hidden="true">Recuerdos</span>
         <h2 class="section__title section__title--center" id="galeria-title">Nuestros momentos compartidos</h2>
         <p class="section__subtitle section__subtitle--italic">Cuando alguien viene a jugar, el domingo se siente distinto.</p>
         <div class="galeria__wrapper" aria-hidden="true">
@@ -278,6 +302,7 @@
     <!-- Quiero Ayudar -->
     <section class="section quiero-ayudar" id="quiero-ayudar" aria-labelledby="ayudar-title">
       <div class="container">
+        <span class="section__eyebrow section__eyebrow--center" aria-hidden="true">Sumate</span>
         <h2 class="section__title section__title--center" id="ayudar-title">Quiero ayudar</h2>
         <p class="section__subtitle">No hay una sola forma de ayudar. Cada aporte suma y hace posible que sigamos yendo cada domingo.</p>
         
@@ -295,7 +320,8 @@
           </a>
 
           <!-- Programa de padrinos -->
-          <a href="padrinos.html" class="ayuda-card">
+          <a href="padrinos.html" class="ayuda-card ayuda-card--featured">
+            <span class="ayuda-card__badge" aria-label="Opción destacada">Más impacto</span>
             <div class="ayuda-card__icon" aria-hidden="true">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
@@ -331,6 +357,7 @@
     <section class="section contacto" id="contacto" aria-labelledby="contacto-title">
       <div class="container">
         <div class="contacto__simple">
+          <span class="section__eyebrow section__eyebrow--center" aria-hidden="true">Hablemos</span>
           <h2 class="section__title section__title--center" id="contacto-title">Contacto</h2>
           <p class="section__subtitle">¿Tenés ganas de sumarte o querés saber más? Escribinos y lo charlamos.</p>
           
