@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Sumate al voluntariado de Domingos de Rayuela. Convocatoria: completá el formulario y te contactamos para una entrevista.">
+
+  <meta property="og:title" content="Sumate — Voluntariado | Domingos de Rayuela">
+  <meta property="og:description" content="Queremos conocerte. Mirá el video de presentación y completá la convocatoria.">
+  <meta property="og:image" content="/assets/og-image.jpg">
+  <meta property="og:url" content="https://domingosderayuela.org/sumate/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <title>Sumate al voluntariado | Domingos de Rayuela</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..700,100;1,9..144,400..600,100&family=Nunito:wght@400;500;600;700;800&family=Baloo+2:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="sumate-page">
+  <header class="header" id="header">
+    <div class="header__container">
+      <a href="../index.html" class="header__logo" aria-label="Ir al inicio">
+        <img src="../logo2.png" alt="Domingos de Rayuela" class="header__logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+        <span class="header__logo-text" style="display: none;">Domingos de Rayuela</span>
+      </a>
+
+      <button class="header__menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">
+        <span class="header__menu-icon"></span>
+      </button>
+
+      <nav class="header__nav" id="navMenu" aria-label="Navegación principal">
+        <ul class="header__nav-list">
+          <li><a href="../index.html#inicio" class="header__nav-link">Inicio</a></li>
+          <li><a href="../nosotros.html" class="header__nav-link">Nosotros</a></li>
+          <li><a href="../blog.html" class="header__nav-link">Blog</a></li>
+          <li><a href="../index.html#quiero-ayudar" class="header__nav-link header__nav-link--cta">Quiero ayudar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-secondary" aria-label="Sumate al voluntariado">
+      <div class="container">
+        <a href="../index.html#quiero-ayudar" class="back-link" data-back aria-label="Volver a Quiero ayudar">
+          <svg class="back-link__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          Volver
+        </a>
+        <nav class="breadcrumb" aria-label="Navegación de migas de pan">
+          <a href="../index.html">Inicio</a>
+          <span aria-hidden="true">/</span>
+          <a href="../index.html#quiero-ayudar">Quiero ayudar</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Sumate</span>
+        </nav>
+        <span class="section__eyebrow section__eyebrow--center sumate-page__eyebrow" aria-hidden="true">Domingos de Rayuela</span>
+        <h1 class="hero-secondary__title">Convocatoria — Voluntariado</h1>
+        <p class="hero-secondary__subtitle">
+          Agradecemos tu interés por formar parte de nuestro voluntariado. Este formulario nos ayuda a conocer tu perfil; luego te llamamos a entrevistas personales. Las actividades se programan según objetivos que surgen de los intereses, preferencias y necesidades de lxs niñxs del hogar. Es importante el compromiso que implica sumarse a esta convocatoria.
+        </p>
+      </div>
+    </section>
+
+    <!-- Video: agregar el ID de YouTube en data-youtube-id (solo letras, números, guiones y guión bajo) -->
+    <section class="section sumate-video-section" aria-labelledby="sumate-video-title">
+      <div class="container">
+        <h2 id="sumate-video-title" class="section__title section__title--center sumate-video-section__title">Conocé un poco más</h2>
+        <div id="sumateVideoMount" class="sumate-video" data-youtube-id="" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <section class="section quiero-ayudar-page" aria-labelledby="sumate-form-title">
+      <div class="container">
+        <div class="quiero-ayudar-page__form-wrap" id="sumateFormWrap">
+          <form class="form quiero-ayudar-page__form" id="sumateForm" novalidate>
+            <h2 class="form__title" id="sumate-form-title">Formulario de convocatoria</h2>
+            <p class="form__lead">Los campos marcados con asterisco (*) son obligatorios. Tus datos los usa solo el equipo de coordinación.</p>
+
+            <div class="form-submit-feedback form-submit-feedback--error" id="sumateFormError" hidden role="alert" aria-live="assertive"></div>
+
+            <div class="form__group">
+              <label for="email" class="form__label">Correo electrónico *</label>
+              <input type="email" id="email" name="email" class="form__input" required autocomplete="email" placeholder="tunombre@correo.com">
+              <span class="form__error" id="emailError" aria-live="polite"></span>
+            </div>
+
+            <div class="form__group">
+              <label for="nombreCompleto" class="form__label">Nombre y apellido *</label>
+              <input type="text" id="nombreCompleto" name="nombreCompleto" class="form__input" required autocomplete="name" placeholder="Nombre completo">
+              <span class="form__error" id="nombreCompletoError" aria-live="polite"></span>
+            </div>
+
+            <div class="form__row">
+              <div class="form__group">
+                <label for="edad" class="form__label">Edad (mayor de 18 años) *</label>
+                <input type="number" id="edad" name="edad" class="form__input" required min="18" max="120" step="1" inputmode="numeric" placeholder="Ej. 24">
+                <span class="form__error" id="edadError" aria-live="polite"></span>
+              </div>
+              <div class="form__group">
+                <label for="ocupacion" class="form__label">Ocupación *</label>
+                <input type="text" id="ocupacion" name="ocupacion" class="form__input" required autocomplete="organization-title" placeholder="Estudio, trabajo, etc.">
+                <span class="form__error" id="ocupacionError" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <div class="form__group">
+              <label for="domicilio" class="form__label">Domicilio</label>
+              <input type="text" id="domicilio" name="domicilio" class="form__input" autocomplete="street-address" placeholder="Ciudad / barrio (opcional)">
+            </div>
+
+            <div class="form__group">
+              <label for="celular" class="form__label">Número de celular *</label>
+              <input type="tel" id="celular" name="celular" class="form__input" required autocomplete="tel" placeholder="381 4000000" pattern="[0-9\s\-+()]+">
+              <span class="form__error" id="celularError" aria-live="polite"></span>
+            </div>
+
+            <fieldset class="form__fieldset">
+              <legend class="form__label form__legend">¿Conocés qué actividades realiza nuestro voluntariado? *</legend>
+              <div class="form__radio-row">
+                <label class="form__radio-label"><input type="radio" name="conoceActividades" value="si" required> Sí</label>
+                <label class="form__radio-label"><input type="radio" name="conoceActividades" value="no"> No</label>
+              </div>
+              <span class="form__error" id="conoceActividadesError" aria-live="polite"></span>
+            </fieldset>
+
+            <fieldset class="form__fieldset">
+              <legend class="form__label form__legend">¿Alguna vez formaste parte de un voluntariado o actividad similar? *</legend>
+              <div class="form__radio-row">
+                <label class="form__radio-label"><input type="radio" name="experienciaVoluntariado" value="si" required> Sí</label>
+                <label class="form__radio-label"><input type="radio" name="experienciaVoluntariado" value="no"> No</label>
+              </div>
+              <span class="form__error" id="experienciaVoluntariadoError" aria-live="polite"></span>
+            </fieldset>
+
+            <div class="form__group">
+              <label for="experienciaDetalle" class="form__label">En caso afirmativo, contanos brevemente tu experiencia</label>
+              <textarea id="experienciaDetalle" name="experienciaDetalle" class="form__textarea" rows="3" placeholder="Si elegiste Sí arriba, contanos en unas líneas."></textarea>
+              <span class="form__error" id="experienciaDetalleError" aria-live="polite"></span>
+            </div>
+
+            <fieldset class="form__fieldset">
+              <legend class="form__label form__legend">¿Cómo te enteraste de la convocatoria? *</legend>
+              <div class="form__radio-stack">
+                <label class="form__radio-label"><input type="radio" name="comoSeEntero" value="facebook" required> Facebook</label>
+                <label class="form__radio-label"><input type="radio" name="comoSeEntero" value="instagram"> Instagram</label>
+                <label class="form__radio-label"><input type="radio" name="comoSeEntero" value="amigo"> Por un amigo o conocido</label>
+                <label class="form__radio-label"><input type="radio" name="comoSeEntero" value="otro"> Otro</label>
+              </div>
+              <span class="form__error" id="comoSeEnteroError" aria-live="polite"></span>
+            </fieldset>
+
+            <fieldset class="form__fieldset">
+              <legend class="form__label form__legend">¿Conocés a algún integrante o ex integrante del voluntariado? *</legend>
+              <div class="form__radio-row">
+                <label class="form__radio-label"><input type="radio" name="conoceIntegrante" value="si" required> Sí</label>
+                <label class="form__radio-label"><input type="radio" name="conoceIntegrante" value="no"> No</label>
+              </div>
+              <span class="form__error" id="conoceIntegranteError" aria-live="polite"></span>
+            </fieldset>
+
+            <div class="form__group">
+              <label for="integranteQuien" class="form__label">¿A quién?</label>
+              <input type="text" id="integranteQuien" name="integranteQuien" class="form__input" placeholder="Nombre (si aplica)">
+              <span class="form__error" id="integranteQuienError" aria-live="polite"></span>
+            </div>
+
+            <fieldset class="form__fieldset">
+              <legend class="form__label form__legend">¿Te gustaría formar parte de? * <span class="form__legend-hint">(podés marcar más de una)</span></legend>
+              <div class="form__checkbox-stack">
+                <label class="form__checkbox-label"><input type="checkbox" name="areas" value="domingos"> Actividades que realiza el voluntariado todos los domingos</label>
+                <label class="form__checkbox-label"><input type="checkbox" name="areas" value="reuniones"> Las reuniones que realizan lxs voluntarixs para planificar y evaluar las actividades</label>
+                <label class="form__checkbox-label"><input type="checkbox" name="areas" value="tallerista"> Ofrecer otro tipo de participación, por ejemplo como tallerista</label>
+                <label class="form__checkbox-label"><input type="checkbox" name="areas" value="cumpleanios"> Cumpleaños de lxs niñxs</label>
+                <label class="form__checkbox-label"><input type="checkbox" name="areas" value="capacitacion"> Capacitación dirigida a voluntarios</label>
+                <label class="form__checkbox-label"><input type="checkbox" name="areas" value="otros"> Otros: gestión de recursos; prensa y difusión</label>
+              </div>
+              <span class="form__error" id="areasError" aria-live="polite"></span>
+            </fieldset>
+
+            <div class="form__group">
+              <label for="disponibilidad" class="form__label">¿Cuál es tu disponibilidad horaria?</label>
+              <p class="form__hint form__hint--block" id="disponibilidadDesc">Es importante para la organización conocer los horarios en los que podés participar.</p>
+              <textarea id="disponibilidad" name="disponibilidad" class="form__textarea" rows="4" aria-describedby="disponibilidadDesc" placeholder="Días y franjas horarias aproximadas"></textarea>
+            </div>
+
+            <div class="form__hp" aria-hidden="true">
+              <label for="website">Sitio web</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" value="">
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--full btn--lg" id="sumateFormSubmit">
+              <span class="btn__emoji" aria-hidden="true">💚</span>
+              <span class="btn__label" id="sumateSubmitLabel">Enviar postulación</span>
+              <span class="btn__loading" id="sumateSubmitLoading" hidden>Enviando…</span>
+            </button>
+          </form>
+
+          <div class="form-success" id="sumateFormSuccess" hidden role="status" aria-live="polite">
+            <div class="form-success__icon" aria-hidden="true">
+              <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
+            <h2 class="visually-hidden">Formulario enviado</h2>
+            <p class="form-success__text" id="sumateFormSuccessMessage" tabindex="-1">¡Gracias por postularte! Revisamos las respuestas y nos vamos a contactar con vos para la siguiente etapa.</p>
+            <a href="../index.html" class="btn btn--primary btn--lg form-success__cta">Volver al inicio</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="../index.html" class="footer__logo-link">
+            <img src="../logorayuela.png" alt="Domingos de Rayuela" class="footer__logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+            <span class="footer__logo-text" style="display: none;">Domingos de Rayuela</span>
+          </a>
+          <p class="footer__tagline">Transformamos domingos en recuerdos felices</p>
+        </div>
+        <nav class="footer__nav" aria-label="Navegación del footer">
+          <ul class="footer__nav-list">
+            <li><a href="../index.html#inicio">Inicio</a></li>
+            <li><a href="../nosotros.html">Nosotros</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../quieroayudar.html">Quiero ayudar</a></li>
+            <li><a href="../index.html#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+        <div class="footer__social">
+          <a href="https://wa.me/5491123456789" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+            </svg>
+          </a>
+          <a href="https://instagram.com/domingosderayuela" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="mailto:hola@domingosderayuela.org" class="footer__social-link" aria-label="Email">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Domingos de Rayuela. Sin fines de lucro.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="wa-float" id="waFloat" aria-label="Escribinos por WhatsApp">
+    <svg class="wa-float__icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+      <path d="M19.11 17.32c-.27-.14-1.59-.78-1.84-.87-.25-.09-.43-.14-.6.14-.18.27-.69.87-.85 1.05-.16.18-.31.2-.58.07-.27-.14-1.13-.42-2.16-1.33-.8-.71-1.34-1.59-1.5-1.86-.16-.27-.02-.42.12-.55.12-.12.27-.31.4-.47.14-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.14-.6-1.45-.83-1.99-.22-.52-.44-.45-.6-.46-.16-.01-.34-.01-.52-.01-.18 0-.47.07-.71.34-.25.27-.94.92-.94 2.24 0 1.32.96 2.6 1.1 2.78.14.18 1.9 2.9 4.6 4.07.64.28 1.14.45 1.53.57.64.2 1.22.17 1.69.1.51-.07 1.59-.65 1.81-1.27.22-.62.22-1.16.16-1.27-.07-.11-.25-.18-.52-.31zM16.05 27.5h-.01c-1.94 0-3.84-.52-5.5-1.5l-.4-.23-4.08 1.07 1.09-3.98-.26-.41a10.39 10.39 0 0 1-1.59-5.54c0-5.74 4.67-10.41 10.4-10.41 2.78 0 5.39 1.08 7.36 3.05a10.34 10.34 0 0 1 3.04 7.36c0 5.74-4.67 10.41-10.4 10.41zm8.85-19.27A12.31 12.31 0 0 0 16.05 4C9.18 4 3.6 9.58 3.59 16.45c0 2.2.57 4.34 1.66 6.23L3.5 29l6.46-1.7a12.42 12.42 0 0 0 5.99 1.53h.01c6.87 0 12.45-5.58 12.46-12.45 0-3.33-1.3-6.45-3.65-8.81z"/>
+    </svg>
+    <span class="wa-float__label">Escribinos</span>
+  </a>
+
+  <div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast__content">
+      <svg class="toast__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+      </svg>
+      <span class="toast__message" id="toastMessage"></span>
+    </div>
+    <button class="toast__close" id="toastClose" aria-label="Cerrar notificación">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+
+  <script src="../script.js" defer></script>
+  <script src="../assets/js/sumate-form.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "cleanUrls": false,
+  "rewrites": [
+    { "source": "/sumate", "destination": "/sumate/index.html" },
+    { "source": "/sumate/", "destination": "/sumate/index.html" },
+    { "source": "/quieroayudar", "destination": "/quieroayudar.html" },
+    { "source": "/quieroayudar/", "destination": "/quieroayudar.html" }
+  ]
+}

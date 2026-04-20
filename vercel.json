@@ -9,6 +9,14 @@
     {
       "source": "/quieroayudar/",
       "destination": "/quieroayudar.html"
+    },
+    {
+      "source": "/sumate",
+      "destination": "/sumate/index.html"
+    },
+    {
+      "source": "/sumate/",
+      "destination": "/sumate/index.html"
     }
   ],
   "headers": [

@@ -7,10 +7,14 @@
     "node": ">=18"
   },
   "scripts": {
-    "test": "node --test tests/quieroayudar-mail-utils.test.js",
-    "verify:env": "node scripts/verify-quieroayudar-env.js"
+    "test": "node --test tests/quieroayudar-mail-utils.test.js tests/sumatevoluntariado-mail.test.js",
+    "verify:env": "node scripts/verify-quieroayudar-env.js",
+    "dev": "serve . -l 3000"
   },
   "dependencies": {
     "resend": "^4.0.1"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
   }
 }
