@@ -17,6 +17,21 @@ const { trimString, parseBccList } = require('../lib/quieroayudar-utils');
 const { processSumateBody, buildSumateEmailContent } = require('../lib/sumatevoluntariado-mail');
 
 const MAX_BODY_BYTES = 64 * 1024;
+const MAX_DETAIL_LEN = 240;
+
+/**
+ * Recorta cualquier texto de error proveniente del proveedor o de la runtime
+ * para evitar filtrar datos ruidosos o demasiado largos al cliente.
+ * @param {unknown} raw
+ * @returns {string}
+ */
+function safeDetail(raw) {
+  if (raw == null) return '';
+  const text = typeof raw === 'string' ? raw : String(raw);
+  const trimmed = text.trim();
+  if (!trimmed) return '';
+  return trimmed.length > MAX_DETAIL_LEN ? trimmed.slice(0, MAX_DETAIL_LEN) + '…' : trimmed;
+}
 
 /**
  * @param {import('http').IncomingMessage} req
@@ -143,8 +158,13 @@ module.exports = async function handler(req, res) {
   const mailBccRaw = process.env.MAIL_BCC_SUMATE;
 
   if (!apiKey || !mailFrom || !mailTo) {
+    const missing = [];
+    if (!apiKey) missing.push('RESEND_API_KEY');
+    if (!mailFrom) missing.push('MAIL_FROM');
+    if (!mailTo) missing.push('MAIL_TO');
     console.error(
-      '[sumatevoluntariado] Falta configuración: RESEND_API_KEY (o RESEND_API_KEY_SUMATE), MAIL_FROM (o MAIL_FROM_SUMATE) o MAIL_TO (o MAIL_TO_SUMATE)'
+      '[sumatevoluntariado] Falta configuración en Vercel. Variables ausentes (o su equivalente _SUMATE):',
+      missing.join(', ')
     );
     res.statusCode = 500;
     res.end(
@@ -152,7 +172,9 @@ module.exports = async function handler(req, res) {
         success: false,
         error: {
           code: 'SERVER_CONFIG',
-          message: 'Ocurrió un problema al enviar el formulario. Por favor, intentá nuevamente.'
+          message:
+            'El servicio de correo no está configurado en el servidor. Intentá de nuevo en unos minutos o avisanos por otro canal.',
+          detail: 'Variables faltantes: ' + missing.join(', ')
         }
       })
     );
@@ -185,17 +207,26 @@ module.exports = async function handler(req, res) {
     const result = await resend.emails.send(payload);
 
     if (result.error) {
-      console.error(
-        '[sumatevoluntariado] Resend respondió con error:',
-        result.error.message || 'desconocido'
-      );
+      try {
+        console.error(
+          '[sumatevoluntariado] Resend respondió con error:',
+          JSON.stringify(result.error)
+        );
+      } catch (_logErr) {
+        console.error(
+          '[sumatevoluntariado] Resend respondió con error (no serializable):',
+          result.error && result.error.message
+        );
+      }
       res.statusCode = 502;
       res.end(
         JSON.stringify({
           success: false,
           error: {
             code: 'MAIL_PROVIDER',
-            message: 'Ocurrió un problema al enviar el formulario. Por favor, intentá nuevamente.'
+            message:
+              'El proveedor de correo rechazó el envío. Por favor, intentá nuevamente o avisanos por otro canal.',
+            detail: safeDetail(result.error && result.error.message)
           }
         })
       );
@@ -213,7 +244,8 @@ module.exports = async function handler(req, res) {
         success: false,
         error: {
           code: 'INTERNAL',
-          message: 'Ocurrió un problema al enviar el formulario. Por favor, intentá nuevamente.'
+          message: 'Ocurrió un problema al enviar el formulario. Por favor, intentá nuevamente.',
+          detail: safeDetail(msg)
         }
       })
     );

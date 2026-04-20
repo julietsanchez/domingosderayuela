@@ -283,14 +283,36 @@
 
         var friendly =
           'Ocurrió un problema al enviar el formulario. Por favor, intentá nuevamente.';
-        if (json && json.error && json.error.message && res.status === 400) {
-          friendly = json.error.message;
+        var detail = '';
+
+        if (json && json.error && typeof json.error.message === 'string' && json.error.message.trim()) {
+          friendly = json.error.message.trim();
+          if (typeof json.error.detail === 'string' && json.error.detail.trim()) {
+            detail = json.error.detail.trim();
+          }
+        } else if (res.status >= 500) {
+          friendly =
+            'El servidor no pudo procesar el envío (error ' + res.status + '). Intentá nuevamente en unos minutos.';
+        } else if (res.status === 404) {
+          friendly =
+            'No se encontró el endpoint del formulario (404). Avisanos por otro canal mientras lo revisamos.';
+        } else if (res.status === 0) {
+          friendly =
+            'No pudimos contactar al servidor. Revisá tu conexión e intentá de nuevo.';
         }
-        setFormError(friendly);
+
+        if (window.console && typeof window.console.error === 'function') {
+          window.console.error('[quieroayudar] Envío falló. status=', res.status, 'body=', json);
+        }
+
+        setFormError(detail ? friendly + ' (' + detail + ')' : friendly);
       })
-      .catch(function () {
+      .catch(function (err) {
+        if (window.console && typeof window.console.error === 'function') {
+          window.console.error('[quieroayudar] Error de red al enviar:', err);
+        }
         setFormError(
-          'Ocurrió un problema al enviar el formulario. Por favor, intentá nuevamente.'
+          'No pudimos contactar al servidor. Revisá tu conexión e intentá de nuevo.'
         );
       })
       .finally(function () {

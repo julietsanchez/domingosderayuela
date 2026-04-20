@@ -24,8 +24,23 @@ const MOTIVO_LABELS = {
 const ALLOWED_MOTIVOS = Object.keys(MOTIVO_LABELS);
 
 const MAX_BODY_BYTES = 48 * 1024;
+const MAX_DETAIL_LEN = 240;
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+/**
+ * Recorta cualquier texto de error proveniente del proveedor o de la runtime
+ * para evitar filtrar datos ruidosos o demasiado largos al cliente.
+ * @param {unknown} raw
+ * @returns {string}
+ */
+function safeDetail(raw) {
+  if (raw == null) return '';
+  const text = typeof raw === 'string' ? raw : String(raw);
+  const trimmed = text.trim();
+  if (!trimmed) return '';
+  return trimmed.length > MAX_DETAIL_LEN ? trimmed.slice(0, MAX_DETAIL_LEN) + '…' : trimmed;
+}
 
 /**
  * @param {import('http').IncomingMessage} req
@@ -261,14 +276,23 @@ module.exports = async function handler(req, res) {
   const mailBccRaw = process.env.MAIL_BCC;
 
   if (!apiKey || !mailFrom || !mailTo) {
-    console.error('[quieroayudar] Falta configuración: RESEND_API_KEY, MAIL_FROM o MAIL_TO');
+    const missing = [];
+    if (!apiKey) missing.push('RESEND_API_KEY');
+    if (!mailFrom) missing.push('MAIL_FROM');
+    if (!mailTo) missing.push('MAIL_TO');
+    console.error(
+      '[quieroayudar] Falta configuración en Vercel. Variables ausentes:',
+      missing.join(', ')
+    );
     res.statusCode = 500;
     res.end(
       JSON.stringify({
         success: false,
         error: {
           code: 'SERVER_CONFIG',
-          message: 'Ocurrió un problema al enviar el formulario. Por favor, intentá nuevamente.'
+          message:
+            'El servicio de correo no está configurado en el servidor. Intentá de nuevo en unos minutos o avisanos por otro canal.',
+          detail: 'Variables faltantes: ' + missing.join(', ')
         }
       })
     );
@@ -310,14 +334,26 @@ module.exports = async function handler(req, res) {
     const result = await resend.emails.send(payload);
 
     if (result.error) {
-      console.error('[quieroayudar] Resend respondió con error:', result.error.message || 'desconocido');
+      try {
+        console.error(
+          '[quieroayudar] Resend respondió con error:',
+          JSON.stringify(result.error)
+        );
+      } catch (_logErr) {
+        console.error(
+          '[quieroayudar] Resend respondió con error (no serializable):',
+          result.error && result.error.message
+        );
+      }
       res.statusCode = 502;
       res.end(
         JSON.stringify({
           success: false,
           error: {
             code: 'MAIL_PROVIDER',
-            message: 'Ocurrió un problema al enviar el formulario. Por favor, intentá nuevamente.'
+            message:
+              'El proveedor de correo rechazó el envío. Por favor, intentá nuevamente o avisanos por otro canal.',
+            detail: safeDetail(result.error && result.error.message)
           }
         })
       );
@@ -335,7 +371,8 @@ module.exports = async function handler(req, res) {
         success: false,
         error: {
           code: 'INTERNAL',
-          message: 'Ocurrió un problema al enviar el formulario. Por favor, intentá nuevamente.'
+          message: 'Ocurrió un problema al enviar el formulario. Por favor, intentá nuevamente.',
+          detail: safeDetail(msg)
         }
       })
     );
