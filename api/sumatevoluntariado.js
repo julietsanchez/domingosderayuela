@@ -2,7 +2,14 @@
 
 /**
  * POST /api/sumatevoluntariado — formulario de convocatoria en /sumate (Resend).
- * Reutiliza las mismas variables de entorno que /api/quieroayudar.
+ *
+ * Variables de entorno (Vercel → Settings → Environment Variables):
+ * - RESEND_API_KEY — obligatoria (salvo que definas RESEND_API_KEY_SUMATE).
+ * - RESEND_API_KEY_SUMATE — opcional. Otra API key de Resend solo para esta convocatoria.
+ * - MAIL_FROM, MAIL_TO — obligatorias si no usás las específicas de sumate.
+ * - MAIL_FROM_SUMATE — opcional. Remitente distinto (debe estar verificado en Resend).
+ * - MAIL_TO_SUMATE — opcional. Casilla distinta para recibir postulaciones.
+ * - MAIL_BCC_SUMATE — opcional. BCC solo para sumate (no hereda MAIL_BCC de Quiero ayudar).
  */
 
 const { Resend } = require('resend');
@@ -128,13 +135,17 @@ module.exports = async function handler(req, res) {
     return;
   }
 
-  const apiKey = trimString(process.env.RESEND_API_KEY);
-  const mailFrom = trimString(process.env.MAIL_FROM);
-  const mailTo = trimString(process.env.MAIL_TO);
-  const mailBccRaw = process.env.MAIL_BCC;
+  const apiKey =
+    trimString(process.env.RESEND_API_KEY_SUMATE) || trimString(process.env.RESEND_API_KEY);
+  const mailFrom =
+    trimString(process.env.MAIL_FROM_SUMATE) || trimString(process.env.MAIL_FROM);
+  const mailTo = trimString(process.env.MAIL_TO_SUMATE) || trimString(process.env.MAIL_TO);
+  const mailBccRaw = process.env.MAIL_BCC_SUMATE;
 
   if (!apiKey || !mailFrom || !mailTo) {
-    console.error('[sumatevoluntariado] Falta configuración: RESEND_API_KEY, MAIL_FROM o MAIL_TO');
+    console.error(
+      '[sumatevoluntariado] Falta configuración: RESEND_API_KEY (o RESEND_API_KEY_SUMATE), MAIL_FROM (o MAIL_FROM_SUMATE) o MAIL_TO (o MAIL_TO_SUMATE)'
+    );
     res.statusCode = 500;
     res.end(
       JSON.stringify({
@@ -148,7 +159,7 @@ module.exports = async function handler(req, res) {
     return;
   }
 
-  const bccList = parseBccList(mailBccRaw);
+  const bccList = parseBccList(mailBccRaw != null ? String(mailBccRaw) : '');
   const receivedAt = new Date().toLocaleString('es-AR', {
     timeZone: 'America/Argentina/Buenos_Aires',
     dateStyle: 'long',

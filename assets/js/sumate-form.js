@@ -142,19 +142,31 @@
       formError.textContent = '';
       formError.setAttribute('hidden', '');
     }
-    var msgEl = document.getElementById('sumateFormSuccessMessage');
-    if (msgEl) {
-      msgEl.setAttribute('tabindex', '-1');
+    var headingEl = document.getElementById('sumateFormSuccessHeading');
+    if (headingEl) {
+      headingEl.setAttribute('tabindex', '-1');
       try {
-        msgEl.focus({ preventScroll: true });
+        headingEl.focus({ preventScroll: true });
       } catch (e) {
-        msgEl.focus();
+        headingEl.focus();
       }
     }
     if (prefersReducedMotion) {
       successBlock.scrollIntoView();
     } else {
       successBlock.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    try {
+      window.dispatchEvent(
+        new CustomEvent('domingos-de-rayuela:toast', {
+          detail: {
+            message:
+              '¡Listo! Tu postulación llegó bien. Te vamos a contactar por mail cuando avance la convocatoria.'
+          }
+        })
+      );
+    } catch (e) {
+      /* ignore */
     }
   }
 

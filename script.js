@@ -382,6 +382,12 @@
     toastClose.addEventListener('click', hideToast);
   }
 
+  window.addEventListener('domingos-de-rayuela:toast', function (event) {
+    if (event && event.detail && typeof event.detail.message === 'string' && event.detail.message) {
+      showToast(event.detail.message);
+    }
+  });
+
   // Close toast on escape
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && toast && toast.classList.contains('active')) {

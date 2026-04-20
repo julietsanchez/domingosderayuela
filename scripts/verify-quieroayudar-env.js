@@ -23,6 +23,13 @@ optional.forEach(function (key) {
   console.log((present ? '○' : '○') + ' ' + key + (present ? ' (definida)' : ' (opcional, sin valor)'));
 });
 
+
+console.log('\nConvocatoria /sumate (opcional — si falta, se usan RESEND_API_KEY, MAIL_FROM, MAIL_TO):');
+['MAIL_TO_SUMATE', 'MAIL_FROM_SUMATE', 'MAIL_BCC_SUMATE', 'RESEND_API_KEY_SUMATE'].forEach(function (key) {
+  const present = !!process.env[key] && String(process.env[key]).trim() !== '';
+  console.log((present ? '○' : '○') + ' ' + key + (present ? ' (definida)' : ' (sin valor)'));
+});
+
 console.log('');
 if (ok) {
   console.log('Variables obligatorias presentes. Podés probar con `vercel dev` y el formulario en local.');
