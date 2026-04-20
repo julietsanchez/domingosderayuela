@@ -24,10 +24,15 @@ optional.forEach(function (key) {
 });
 
 
-console.log('\nConvocatoria /sumate (opcional — si falta, se usan RESEND_API_KEY, MAIL_FROM, MAIL_TO):');
+console.log(
+  '\nConvocatoria /sumate (opcional — si falta cualquiera, se hereda de la variable general equivalente:'
+);
+console.log(
+  '  RESEND_API_KEY_SUMATE→RESEND_API_KEY, MAIL_FROM_SUMATE→MAIL_FROM, MAIL_TO_SUMATE→MAIL_TO, MAIL_BCC_SUMATE→MAIL_BCC):'
+);
 ['MAIL_TO_SUMATE', 'MAIL_FROM_SUMATE', 'MAIL_BCC_SUMATE', 'RESEND_API_KEY_SUMATE'].forEach(function (key) {
   const present = !!process.env[key] && String(process.env[key]).trim() !== '';
-  console.log((present ? '○' : '○') + ' ' + key + (present ? ' (definida)' : ' (sin valor)'));
+  console.log((present ? '○' : '○') + ' ' + key + (present ? ' (definida)' : ' (sin valor — usa la general)'));
 });
 
 console.log('');

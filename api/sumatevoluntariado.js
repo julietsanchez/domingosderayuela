@@ -9,7 +9,8 @@
  * - MAIL_FROM, MAIL_TO — obligatorias si no usás las específicas de sumate.
  * - MAIL_FROM_SUMATE — opcional. Remitente distinto (debe estar verificado en Resend).
  * - MAIL_TO_SUMATE — opcional. Casilla distinta para recibir postulaciones.
- * - MAIL_BCC_SUMATE — opcional. BCC solo para sumate (no hereda MAIL_BCC de Quiero ayudar).
+ * - MAIL_BCC_SUMATE — opcional. BCC específico para sumate. Si no se define o viene
+ *   vacío, se usa el MAIL_BCC general (igual que el resto de las variables).
  */
 
 const { Resend } = require('resend');
@@ -155,7 +156,10 @@ module.exports = async function handler(req, res) {
   const mailFrom =
     trimString(process.env.MAIL_FROM_SUMATE) || trimString(process.env.MAIL_FROM);
   const mailTo = trimString(process.env.MAIL_TO_SUMATE) || trimString(process.env.MAIL_TO);
-  const mailBccRaw = process.env.MAIL_BCC_SUMATE;
+  const mailBccRaw =
+    trimString(process.env.MAIL_BCC_SUMATE) !== ''
+      ? process.env.MAIL_BCC_SUMATE
+      : process.env.MAIL_BCC;
 
   if (!apiKey || !mailFrom || !mailTo) {
     const missing = [];
@@ -182,6 +186,12 @@ module.exports = async function handler(req, res) {
   }
 
   const bccList = parseBccList(mailBccRaw != null ? String(mailBccRaw) : '');
+  const bccSource =
+    trimString(process.env.MAIL_BCC_SUMATE) !== ''
+      ? 'MAIL_BCC_SUMATE'
+      : trimString(process.env.MAIL_BCC) !== ''
+        ? 'MAIL_BCC'
+        : 'none';
   const receivedAt = new Date().toLocaleString('es-AR', {
     timeZone: 'America/Argentina/Buenos_Aires',
     dateStyle: 'long',
@@ -203,6 +213,17 @@ module.exports = async function handler(req, res) {
     if (bccList.length) {
       payload.bcc = bccList;
     }
+
+    console.log(
+      '[sumatevoluntariado] Enviando correo. bccSource=' +
+        bccSource +
+        ' bccCount=' +
+        bccList.length +
+        ' hasFrom=' +
+        (mailFrom ? 'yes' : 'no') +
+        ' hasTo=' +
+        (mailTo ? 'yes' : 'no')
+    );
 
     const result = await resend.emails.send(payload);
 
@@ -232,6 +253,14 @@ module.exports = async function handler(req, res) {
       );
       return;
     }
+
+    const resendId = result && result.data && result.data.id ? result.data.id : '(sin id)';
+    console.log(
+      '[sumatevoluntariado] Resend aceptó el envío. id=' +
+        resendId +
+        ' bccCount=' +
+        bccList.length
+    );
 
     res.statusCode = 200;
     res.end(JSON.stringify({ success: true }));

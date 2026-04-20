@@ -300,6 +300,7 @@ module.exports = async function handler(req, res) {
   }
 
   const bccList = parseBccList(mailBccRaw);
+  const bccDefined = trimString(mailBccRaw) !== '';
   const receivedAt = new Date().toLocaleString('es-AR', {
     timeZone: 'America/Argentina/Buenos_Aires',
     dateStyle: 'long',
@@ -331,6 +332,17 @@ module.exports = async function handler(req, res) {
       payload.bcc = bccList;
     }
 
+    console.log(
+      '[quieroayudar] Enviando correo. bccDefined=' +
+        (bccDefined ? 'yes' : 'no') +
+        ' bccCount=' +
+        bccList.length +
+        ' hasFrom=' +
+        (mailFrom ? 'yes' : 'no') +
+        ' hasTo=' +
+        (mailTo ? 'yes' : 'no')
+    );
+
     const result = await resend.emails.send(payload);
 
     if (result.error) {
@@ -359,6 +371,14 @@ module.exports = async function handler(req, res) {
       );
       return;
     }
+
+    const resendId = result && result.data && result.data.id ? result.data.id : '(sin id)';
+    console.log(
+      '[quieroayudar] Resend aceptó el envío. id=' +
+        resendId +
+        ' bccCount=' +
+        bccList.length
+    );
 
     res.statusCode = 200;
     res.end(JSON.stringify({ success: true }));
