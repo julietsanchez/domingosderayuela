@@ -1913,17 +1913,17 @@ ul {
   text-align: center;
 }
 
-/* ===== Nosotros Card Items (¿Qué hacemos?) ===== */
+/* ===== Nosotros Card Items (¿Qué hacemos?) — mobile-first ===== */
 .nosotros__grid--cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: var(--spacing-lg);
   align-items: stretch;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 600px) {
   .nosotros__grid--cards {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -2140,10 +2140,6 @@ ul {
 }
 
 @media (max-width: 520px) {
-  .nosotros__grid--cards {
-    grid-template-columns: 1fr;
-  }
-
   .nosotros__card-item,
   .nosotros__card-inner,
   .nosotros__card-face {
@@ -3948,10 +3944,6 @@ h1, h2, h3, h4, .section__title, .hero__title, .hero-secondary__title,
 }
 
 @media (max-width: 380px) {
-  .nosotros__grid--cards {
-    grid-template-columns: 1fr;
-  }
-
   .header__logo-text {
     font-size: var(--font-size-base);
     max-width: 42vw;
@@ -4458,11 +4450,17 @@ p { color: var(--c-ink-soft); }
 /* ★ Nuevo sistema de cards: foto thumb + body crema ★ */
 .nosotros__grid--cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: 1.25rem;
 }
 
-@media (min-width: 720px) {
+@media (min-width: 600px) {
+  .nosotros__grid--cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
   .nosotros__grid--cards {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
@@ -5216,9 +5214,6 @@ p { color: var(--c-ink-soft); }
 }
 
 @media (max-width: 380px) {
-  .nosotros__grid--cards {
-    grid-template-columns: 1fr;
-  }
   .nosotros__card-photo {
     aspect-ratio: 16 / 9;
   }
@@ -5752,14 +5747,20 @@ p { color: var(--c-ink-soft); }
 .nosotros__grid-eyebrow::before { right: 100%; }
 .nosotros__grid-eyebrow::after  { left: 100%; }
 
-/* ★★★ CARDS CON OVERLAYS — recuperadas y pulidas ★★★ */
+/* ★★★ CARDS CON OVERLAYS — recuperadas y pulidas (mobile-first) ★★★ */
 .nosotros__grid--cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: 1.1rem;
 }
 
-@media (min-width: 720px) {
+@media (min-width: 600px) {
+  .nosotros__grid--cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
   .nosotros__grid--cards {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.4rem;
@@ -5861,6 +5862,7 @@ p { color: var(--c-ink-soft); }
   margin: 0;
   text-align: center;
   text-wrap: balance;
+  overflow-wrap: break-word;
   max-width: 90%;
   letter-spacing: -0.005em;
 }
@@ -6815,9 +6817,6 @@ p { color: var(--c-ink-soft); }
 }
 
 @media (max-width: 380px) {
-  .nosotros__grid--cards {
-    grid-template-columns: 1fr;
-  }
   .nosotros__card-item {
     aspect-ratio: 16 / 10;
   }
