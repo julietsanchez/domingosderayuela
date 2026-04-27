@@ -128,85 +128,235 @@
         <p class="nosotros__grid-eyebrow" aria-hidden="true">Esto es lo que hacemos cada semana</p>
 
         <div class="nosotros__grid nosotros__grid--cards">
-          <article class="nosotros__card-item">
-            <div class="nosotros__card-photo" style="--card-img: url('./assets/images/jugamos.jpeg')" aria-hidden="true"></div>
-            <div class="nosotros__card-body">
-              <div class="nosotros__card-icon" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="2" y="6" width="20" height="12" rx="2"></rect>
-                  <path d="M12 12h.01"></path>
-                  <path d="M17 12h.01"></path>
-                  <path d="M7 12h.01"></path>
-                </svg>
+          <article class="nosotros__card-item" data-nosotros-card>
+            <div class="nosotros__card-inner">
+              <div class="nosotros__card-face nosotros__card-face--front" style="--card-img: url('./assets/images/jugamos.jpeg')">
+                <div class="nosotros__card-body">
+                  <div class="nosotros__card-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+                      <path d="M12 12h.01"></path>
+                      <path d="M17 12h.01"></path>
+                      <path d="M7 12h.01"></path>
+                    </svg>
+                  </div>
+                  <h3 class="nosotros__card-text">Jugamos juntas</h3>
+                </div>
+                <button class="nosotros__card-toggle" type="button" aria-expanded="false" aria-controls="nosotros-card-jugamos" aria-label="Ver más sobre Jugamos juntas">
+                  <span class="nosotros__card-toggle-text">Tocá para ver</span>
+                  <svg class="nosotros__card-toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M5 12h14"></path>
+                    <path d="M13 6l6 6-6 6"></path>
+                  </svg>
+                </button>
               </div>
-              <h3 class="nosotros__card-text">Jugamos juntas</h3>
+              <div class="nosotros__card-face nosotros__card-face--back" id="nosotros-card-jugamos">
+                <div class="nosotros__card-photo-grid" aria-hidden="true">
+                  <span class="nosotros__mini-photo" style="--mini-img: url('./assets/images/jugamos.jpeg')"></span>
+                  <span class="nosotros__mini-photo" style="--mini-img: url('./assets/images/actividades.jpeg')"></span>
+                  <span class="nosotros__mini-photo" style="--mini-img: url('./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.50%20(1).jpeg')"></span>
+                  <span class="nosotros__mini-photo" style="--mini-img: url('./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.11.07%20(1).jpeg')"></span>
+                </div>
+                <div class="nosotros__card-back-content">
+                  <h3 class="nosotros__card-back-title">Jugamos juntas</h3>
+                  <p class="nosotros__card-description">Realizamos juegos y dinámicas que motivan el desarrollo, la confianza y el trabajo en equipo. Nos divertimos, compartimos y aprendemos juntas.</p>
+                </div>
+                <button class="nosotros__card-toggle nosotros__card-toggle--back" type="button" aria-expanded="false" aria-controls="nosotros-card-jugamos" aria-label="Volver a Jugamos juntas">
+                  Volver
+                </button>
+              </div>
             </div>
           </article>
-          <article class="nosotros__card-item">
-            <div class="nosotros__card-photo" style="--card-img: url('./assets/images/merienda.jpeg')" aria-hidden="true"></div>
-            <div class="nosotros__card-body">
-              <div class="nosotros__card-icon" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M17 8h1a4 4 0 1 1 0 8h-1"></path>
-                  <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"></path>
-                  <line x1="6" y1="2" x2="6" y2="4"></line>
-                  <line x1="10" y1="2" x2="10" y2="4"></line>
-                  <line x1="14" y1="2" x2="14" y2="4"></line>
-                </svg>
+          <article class="nosotros__card-item" data-nosotros-card>
+            <div class="nosotros__card-inner">
+              <div class="nosotros__card-face nosotros__card-face--front" style="--card-img: url('./assets/images/merienda.jpeg')">
+                <div class="nosotros__card-body">
+                  <div class="nosotros__card-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M17 8h1a4 4 0 1 1 0 8h-1"></path>
+                      <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"></path>
+                      <line x1="6" y1="2" x2="6" y2="4"></line>
+                      <line x1="10" y1="2" x2="10" y2="4"></line>
+                      <line x1="14" y1="2" x2="14" y2="4"></line>
+                    </svg>
+                  </div>
+                  <h3 class="nosotros__card-text">Compartimos la merienda</h3>
+                </div>
+                <button class="nosotros__card-toggle" type="button" aria-expanded="false" aria-controls="nosotros-card-merienda" aria-label="Ver más sobre Compartimos la merienda">
+                  <span class="nosotros__card-toggle-text">Tocá para ver</span>
+                  <svg class="nosotros__card-toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M5 12h14"></path>
+                    <path d="M13 6l6 6-6 6"></path>
+                  </svg>
+                </button>
               </div>
-              <h3 class="nosotros__card-text">Compartimos la merienda</h3>
+              <div class="nosotros__card-face nosotros__card-face--back" id="nosotros-card-merienda">
+                <div class="nosotros__card-photo-grid" aria-hidden="true">
+                  <span class="nosotros__mini-photo" style="--mini-img: url('./assets/images/merienda.jpeg')"></span>
+                  <span class="nosotros__mini-photo" style="--mini-img: url('./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.57%20(1).jpeg')"></span>
+                  <span class="nosotros__mini-photo" style="--mini-img: url('./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.52.jpeg')"></span>
+                  <span class="nosotros__mini-photo" style="--mini-img: url('./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.51.jpeg')"></span>
+                </div>
+                <div class="nosotros__card-back-content">
+                  <h3 class="nosotros__card-back-title">Compartimos la merienda</h3>
+                  <p class="nosotros__card-description">Preparamos un momento simple y cercano para conversar, escuchar y disfrutar algo rico. La mesa compartida también construye confianza y cuidado.</p>
+                </div>
+                <button class="nosotros__card-toggle nosotros__card-toggle--back" type="button" aria-expanded="false" aria-controls="nosotros-card-merienda" aria-label="Volver a Compartimos la merienda">
+                  Volver
+                </button>
+              </div>
             </div>
           </article>
-          <article class="nosotros__card-item">
-            <div class="nosotros__card-photo" style="--card-img: url('./assets/images/fechas%20importantes.jpeg')" aria-hidden="true"></div>
-            <div class="nosotros__card-body">
-              <div class="nosotros__card-icon" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="12" cy="7" r="4"></circle>
-                </svg>
+          <article class="nosotros__card-item" data-nosotros-card>
+            <div class="nosotros__card-inner">
+              <div class="nosotros__card-face nosotros__card-face--front" style="--card-img: url('./assets/images/fechas%20importantes.jpeg')">
+                <div class="nosotros__card-body">
+                  <div class="nosotros__card-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                  </div>
+                  <h3 class="nosotros__card-text">Celebramos fechas importantes</h3>
+                </div>
+                <button class="nosotros__card-toggle" type="button" aria-expanded="false" aria-controls="nosotros-card-fechas" aria-label="Ver más sobre Celebramos fechas importantes">
+                  <span class="nosotros__card-toggle-text">Tocá para ver</span>
+                  <svg class="nosotros__card-toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M5 12h14"></path>
+                    <path d="M13 6l6 6-6 6"></path>
+                  </svg>
+                </button>
               </div>
-              <h3 class="nosotros__card-text">Celebramos fechas importantes</h3>
+              <div class="nosotros__card-face nosotros__card-face--back" id="nosotros-card-fechas">
+                <div class="nosotros__card-photo-grid" aria-hidden="true">
+                  <span class="nosotros__mini-photo" style="--mini-img: url('./assets/images/fechas%20importantes.jpeg')"></span>
+                  <span class="nosotros__mini-photo" style="--mini-img: url('./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58%20(1).jpeg')"></span>
+                  <span class="nosotros__mini-photo" style="--mini-img: url('./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58%20(2).jpeg')"></span>
+                  <span class="nosotros__mini-photo" style="--mini-img: url('./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58%20(3).jpeg')"></span>
+                </div>
+                <div class="nosotros__card-back-content">
+                  <h3 class="nosotros__card-back-title">Celebramos fechas importantes</h3>
+                  <p class="nosotros__card-description">Acompañamos cumpleaños, logros y días especiales para que cada niña se sienta mirada, valorada y celebrada con alegría.</p>
+                </div>
+                <button class="nosotros__card-toggle nosotros__card-toggle--back" type="button" aria-expanded="false" aria-controls="nosotros-card-fechas" aria-label="Volver a Celebramos fechas importantes">
+                  Volver
+                </button>
+              </div>
             </div>
           </article>
-          <article class="nosotros__card-item">
-            <div class="nosotros__card-photo" style="--card-img: url('./assets/images/procesos.jpeg')" aria-hidden="true"></div>
-            <div class="nosotros__card-body">
-              <div class="nosotros__card-icon" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                </svg>
+          <article class="nosotros__card-item" data-nosotros-card>
+            <div class="nosotros__card-inner">
+              <div class="nosotros__card-face nosotros__card-face--front" style="--card-img: url('./assets/images/procesos.jpeg')">
+                <div class="nosotros__card-body">
+                  <div class="nosotros__card-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                  </div>
+                  <h3 class="nosotros__card-text">Acompañamos procesos</h3>
+                </div>
+                <button class="nosotros__card-toggle" type="button" aria-expanded="false" aria-controls="nosotros-card-procesos" aria-label="Ver más sobre Acompañamos procesos">
+                  <span class="nosotros__card-toggle-text">Tocá para ver</span>
+                  <svg class="nosotros__card-toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M5 12h14"></path>
+                    <path d="M13 6l6 6-6 6"></path>
+                  </svg>
+                </button>
               </div>
-              <h3 class="nosotros__card-text">Acompañamos procesos</h3>
+              <div class="nosotros__card-face nosotros__card-face--back" id="nosotros-card-procesos">
+                <div class="nosotros__card-photo-grid" aria-hidden="true">
+                  <span class="nosotros__mini-photo" style="--mini-img: url('./assets/images/procesos.jpeg')"></span>
+                  <span class="nosotros__mini-photo" style="--mini-img: url('./assets/images/voluntarias1.jpeg')"></span>
+                  <span class="nosotros__mini-photo" style="--mini-img: url('./assets/images/voluntarias2.jpeg')"></span>
+                  <span class="nosotros__mini-photo" style="--mini-img: url('./assets/images/voluntarias3.jpeg')"></span>
+                </div>
+                <div class="nosotros__card-back-content">
+                  <h3 class="nosotros__card-back-title">Acompañamos procesos</h3>
+                  <p class="nosotros__card-description">Sostenemos vínculos estables desde la presencia, la escucha y el respeto por los tiempos de cada historia. Estar también es cuidar.</p>
+                </div>
+                <button class="nosotros__card-toggle nosotros__card-toggle--back" type="button" aria-expanded="false" aria-controls="nosotros-card-procesos" aria-label="Volver a Acompañamos procesos">
+                  Volver
+                </button>
+              </div>
             </div>
           </article>
-          <article class="nosotros__card-item">
-            <div class="nosotros__card-photo" style="--card-img: url('./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58.jpeg')" aria-hidden="true"></div>
-            <div class="nosotros__card-body">
-              <div class="nosotros__card-icon" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
-                  <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
-                  <path d="M2 2l7.586 7.586"></path>
-                  <circle cx="11" cy="11" r="2"></circle>
-                </svg>
+          <article class="nosotros__card-item" data-nosotros-card>
+            <div class="nosotros__card-inner">
+              <div class="nosotros__card-face nosotros__card-face--front" style="--card-img: url('./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58.jpeg')">
+                <div class="nosotros__card-body">
+                  <div class="nosotros__card-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                      <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                      <path d="M2 2l7.586 7.586"></path>
+                      <circle cx="11" cy="11" r="2"></circle>
+                    </svg>
+                  </div>
+                  <h3 class="nosotros__card-text">Proponemos actividades</h3>
+                </div>
+                <button class="nosotros__card-toggle" type="button" aria-expanded="false" aria-controls="nosotros-card-actividades" aria-label="Ver más sobre Proponemos actividades">
+                  <span class="nosotros__card-toggle-text">Tocá para ver</span>
+                  <svg class="nosotros__card-toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M5 12h14"></path>
+                    <path d="M13 6l6 6-6 6"></path>
+                  </svg>
+                </button>
               </div>
-              <h3 class="nosotros__card-text">Proponemos actividades</h3>
+              <div class="nosotros__card-face nosotros__card-face--back" id="nosotros-card-actividades">
+                <div class="nosotros__card-photo-grid" aria-hidden="true">
+                  <span class="nosotros__mini-photo" style="--mini-img: url('./assets/images/actividades.jpeg')"></span>
+                  <span class="nosotros__mini-photo" style="--mini-img: url('./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58.jpeg')"></span>
+                  <span class="nosotros__mini-photo" style="--mini-img: url('./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58%20(5).jpeg')"></span>
+                  <span class="nosotros__mini-photo" style="--mini-img: url('./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58%20(7).jpeg')"></span>
+                </div>
+                <div class="nosotros__card-back-content">
+                  <h3 class="nosotros__card-back-title">Proponemos actividades</h3>
+                  <p class="nosotros__card-description">Diseñamos propuestas creativas para jugar, expresarnos y descubrir habilidades. Cada encuentro busca despertar curiosidad y alegría.</p>
+                </div>
+                <button class="nosotros__card-toggle nosotros__card-toggle--back" type="button" aria-expanded="false" aria-controls="nosotros-card-actividades" aria-label="Volver a Proponemos actividades">
+                  Volver
+                </button>
+              </div>
             </div>
           </article>
-          <article class="nosotros__card-item">
-            <div class="nosotros__card-photo" style="--card-img: url('./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.11.07%20(4).jpeg')" aria-hidden="true"></div>
-            <div class="nosotros__card-body">
-              <div class="nosotros__card-icon" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 12 20 22 4 22 4 12"></polyline>
-                  <rect x="2" y="7" width="20" height="5"></rect>
-                  <line x1="12" y1="22" x2="12" y2="7"></line>
-                  <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
-                  <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
-                </svg>
+          <article class="nosotros__card-item" data-nosotros-card>
+            <div class="nosotros__card-inner">
+              <div class="nosotros__card-face nosotros__card-face--front" style="--card-img: url('./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.11.07%20(4).jpeg')">
+                <div class="nosotros__card-body">
+                  <div class="nosotros__card-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 12 20 22 4 22 4 12"></polyline>
+                      <rect x="2" y="7" width="20" height="5"></rect>
+                      <line x1="12" y1="22" x2="12" y2="7"></line>
+                      <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
+                      <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+                    </svg>
+                  </div>
+                  <h3 class="nosotros__card-text">Ayudamos según lo que haga falta</h3>
+                </div>
+                <button class="nosotros__card-toggle" type="button" aria-expanded="false" aria-controls="nosotros-card-ayuda" aria-label="Ver más sobre Ayudamos según lo que haga falta">
+                  <span class="nosotros__card-toggle-text">Tocá para ver</span>
+                  <svg class="nosotros__card-toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M5 12h14"></path>
+                    <path d="M13 6l6 6-6 6"></path>
+                  </svg>
+                </button>
               </div>
-              <h3 class="nosotros__card-text">Ayudamos según lo que haga falta</h3>
+              <div class="nosotros__card-face nosotros__card-face--back" id="nosotros-card-ayuda">
+                <div class="nosotros__card-photo-grid" aria-hidden="true">
+                  <span class="nosotros__mini-photo" style="--mini-img: url('./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.11.07%20(4).jpeg')"></span>
+                  <span class="nosotros__mini-photo" style="--mini-img: url('./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.11.07%20(2).jpeg')"></span>
+                  <span class="nosotros__mini-photo" style="--mini-img: url('./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.11.07%20(3).jpeg')"></span>
+                  <span class="nosotros__mini-photo" style="--mini-img: url('./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.11.07%20(1).jpeg')"></span>
+                </div>
+                <div class="nosotros__card-back-content">
+                  <h3 class="nosotros__card-back-title">Ayudamos según lo que haga falta</h3>
+                  <p class="nosotros__card-description">Nos adaptamos a las necesidades del hogar: ordenar, preparar materiales, colaborar y estar disponibles para sumar donde haga falta.</p>
+                </div>
+                <button class="nosotros__card-toggle nosotros__card-toggle--back" type="button" aria-expanded="false" aria-controls="nosotros-card-ayuda" aria-label="Volver a Ayudamos según lo que haga falta">
+                  Volver
+                </button>
+              </div>
             </div>
           </article>
         </div>
@@ -219,63 +369,76 @@
         <span class="section__eyebrow section__eyebrow--center" aria-hidden="true">Recuerdos</span>
         <h2 class="section__title section__title--center" id="galeria-title">Nuestros momentos compartidos</h2>
         <p class="section__subtitle section__subtitle--italic">Cuando alguien viene a jugar, el domingo se siente distinto.</p>
-        <div class="galeria__wrapper" aria-hidden="true">
-          <div class="galeria__track">
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.50%20%281%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.50%20%282%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.51%20%281%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.51%20%283%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.51.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.52%20%281%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.52%20%282%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.52%20%283%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.52.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.56.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.57%20%281%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.32.34%20%281%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.11.07%20%281%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.11.07%20%282%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.11.07%20%283%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.11.07%20%284%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58%20%281%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58%20%282%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58%20%283%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58%20%285%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58%20%287%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/voluntarias1.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/voluntarias2.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/voluntarias3.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/voluntarias4.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/voluntarias5.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.50%20%281%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.50%20%282%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.51%20%281%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.51%20%283%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.51.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.52%20%281%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.52%20%282%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.52%20%283%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.52.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.56.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.57%20%281%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.32.34%20%281%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.11.07%20%281%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.11.07%20%282%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.11.07%20%283%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.11.07%20%284%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58%20%281%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58%20%282%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58%20%283%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58%20%285%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58%20%287%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/voluntarias1.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/voluntarias2.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/voluntarias3.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/voluntarias4.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
-            <div class="galeria__slide"><img src="./assets/images/voluntarias5.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy"></div>
+        <div class="galeria__carousel" aria-label="Carrusel de recuerdos compartidos">
+          <button class="galeria__nav galeria__nav--prev" type="button" data-galeria-prev aria-label="Ver fotos anteriores">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M15 18l-6-6 6-6"></path>
+            </svg>
+          </button>
+          <div class="galeria__wrapper" tabindex="0" aria-label="Fotos de momentos compartidos">
+            <div class="galeria__track" data-galeria-track>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.50%20%281%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="eager" fetchpriority="high" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.50%20%282%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="eager" fetchpriority="high" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.51%20%281%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="eager" fetchpriority="high" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.51%20%283%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="eager" fetchpriority="high" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.51.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.52%20%281%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.52%20%282%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.52%20%283%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.52.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.56.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.57%20%281%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.32.34%20%281%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.11.07%20%281%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.11.07%20%282%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.11.07%20%283%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.11.07%20%284%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58%20%281%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58%20%282%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58%20%283%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58%20%285%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58%20%287%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/voluntarias1.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/voluntarias2.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/voluntarias3.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/voluntarias4.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/voluntarias5.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.50%20%281%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.50%20%282%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.51%20%281%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.51%20%283%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.51.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.52%20%281%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.52%20%282%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.52%20%283%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.52.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.56.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.30.57%20%281%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2011.32.34%20%281%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.11.07%20%281%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.11.07%20%282%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.11.07%20%283%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.11.07%20%284%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58%20%281%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58%20%282%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58%20%283%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58%20%285%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58%20%287%29.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/WhatsApp%20Image%202026-04-16%20at%2014.14.58.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/voluntarias1.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/voluntarias2.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/voluntarias3.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/voluntarias4.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+              <div class="galeria__slide"><img src="./assets/images/voluntarias5.jpeg" alt="Momento compartido en Domingos de Rayuela" loading="lazy" decoding="async"></div>
+            </div>
           </div>
+          <button class="galeria__nav galeria__nav--next" type="button" data-galeria-next aria-label="Ver fotos siguientes">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 18l6-6-6-6"></path>
+            </svg>
+          </button>
+        </div>
         </div>
       </div>
     </section>
@@ -354,12 +517,12 @@
           <p class="section__subtitle">¿Tenés ganas de sumarte o querés saber más? Escribinos y lo charlamos.</p>
           
           <div class="contacto__icons">
-            <a href="https://wa.me/5491123456789" class="contacto__icon-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <a href="https://wa.me/543814094858" class="contacto__icon-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
               </svg>
             </a>
-            <a href="https://instagram.com/domingosderayuela" class="contacto__icon-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <a href="https://www.instagram.com/domingosderayuela/" class="contacto__icon-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram @domingosderayuela">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
@@ -400,12 +563,12 @@
           </ul>
         </nav>
         <div class="footer__social">
-          <a href="https://wa.me/5491123456789" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+          <a href="https://wa.me/543814094858" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
             </svg>
           </a>
-          <a href="https://instagram.com/domingosderayuela" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <a href="https://www.instagram.com/domingosderayuela/" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram @domingosderayuela">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
               <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
               <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>

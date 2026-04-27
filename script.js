@@ -11,13 +11,27 @@
   // Detect current page
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   const isHomePage = currentPage === 'index.html' || currentPage === '' || currentPage === '/';
+  const isNestedPage = window.location.pathname.indexOf('/sumate/') !== -1;
+
+  const INTERNAL_HERO_IMAGES = [
+    'jugamos.jpeg',
+    'merienda.jpeg',
+    'actividades.jpeg',
+    'procesos.jpeg',
+    'fechas%20importantes.jpeg',
+    'WhatsApp%20Image%202026-04-16%20at%2011.30.50%20(1).jpeg',
+    'WhatsApp%20Image%202026-04-16%20at%2011.30.52.jpeg',
+    'WhatsApp%20Image%202026-04-16%20at%2014.14.58.jpeg',
+    'voluntarias1.jpeg',
+    'voluntarias3.jpeg'
+  ];
 
   // ===== WhatsApp Float Config =====
   // Para activar el botón flotante, completar `phone` con el número internacional
-  // (sin "+" ni espacios, ej: "5491123456789"). Si queda vacío, el botón se
+  // (sin "+" ni espacios, ej: "543814094858"). Si queda vacío, el botón se
   // muestra pero no enlaza a ningún destino real (placeholder seguro).
   const WA_CONFIG = {
-    phone: '',
+    phone: '543814094858',
     message: '¡Hola! Quiero saber más sobre Domingos de Rayuela.'
   };
 
@@ -36,6 +50,21 @@
   const carouselTrack = document.getElementById('carouselTrack');
   const carouselSlides = document.querySelectorAll('.carousel__slide');
   const carouselDots = document.querySelectorAll('.carousel__dot');
+
+  // ===== Banners internos con foto aleatoria =====
+  (function initInternalHeroBanners() {
+    const heroes = document.querySelectorAll('[data-random-hero]');
+    if (!heroes.length || !INTERNAL_HERO_IMAGES.length) return;
+
+    const assetPrefix = isNestedPage ? '../assets/images/' : './assets/images/';
+
+    heroes.forEach(function(hero) {
+      const randomIndex = Math.floor(Math.random() * INTERNAL_HERO_IMAGES.length);
+      const imageUrl = assetPrefix + INTERNAL_HERO_IMAGES[randomIndex];
+
+      hero.style.setProperty('--internal-hero-img', `url('${imageUrl}')`);
+    });
+  })();
 
   // ===== Carousel State =====
   let currentSlide = 0;
@@ -210,6 +239,124 @@
     startAutoplay();
   }
 
+  // ===== Galería: navegación manual sin quitar animación automática =====
+  (function initGaleriaCarouselControls() {
+    if (!isHomePage) return;
+
+    const gallery = document.querySelector('.galeria__carousel');
+    if (!gallery) return;
+
+    const wrapper = gallery.querySelector('.galeria__wrapper');
+    const track = gallery.querySelector('[data-galeria-track]');
+    const prevButton = gallery.querySelector('[data-galeria-prev]');
+    const nextButton = gallery.querySelector('[data-galeria-next]');
+
+    if (!wrapper || !track || !prevButton || !nextButton) return;
+
+    const manualPauseMs = 3500;
+    let resumeTimer = null;
+
+    function getSlides() {
+      return Array.from(track.querySelectorAll('.galeria__slide'));
+    }
+
+    function setControlsState() {
+      const hasEnoughSlides = getSlides().length > 1;
+      prevButton.disabled = !hasEnoughSlides;
+      nextButton.disabled = !hasEnoughSlides;
+      wrapper.tabIndex = hasEnoughSlides ? 0 : -1;
+    }
+
+    function getSlideStep() {
+      const firstSlide = track.querySelector('.galeria__slide');
+      if (!firstSlide) return Math.max(wrapper.clientWidth * 0.75, 1);
+
+      const trackStyles = window.getComputedStyle(track);
+      const rawGap = trackStyles.columnGap || trackStyles.gap || '0';
+      const gap = Number.parseFloat(rawGap);
+      const slideWidth = firstSlide.getBoundingClientRect().width;
+
+      if (!Number.isFinite(slideWidth) || slideWidth <= 0) {
+        return Math.max(wrapper.clientWidth * 0.75, 1);
+      }
+
+      return slideWidth + (Number.isFinite(gap) ? gap : 0);
+    }
+
+    function pauseAutoscrollTemporarily() {
+      track.classList.add('galeria__track--manual');
+
+      if (resumeTimer) {
+        window.clearTimeout(resumeTimer);
+      }
+
+      if (prefersReducedMotion) return;
+
+      resumeTimer = window.setTimeout(function() {
+        track.classList.remove('galeria__track--manual');
+        resumeTimer = null;
+      }, manualPauseMs);
+    }
+
+    function normalizeScrollBeforeMove(direction, step) {
+      const halfTrackWidth = track.scrollWidth / 2;
+      if (!Number.isFinite(halfTrackWidth) || halfTrackWidth <= wrapper.clientWidth) return;
+
+      if (direction > 0 && wrapper.scrollLeft >= halfTrackWidth - step) {
+        wrapper.scrollLeft = Math.max(wrapper.scrollLeft - halfTrackWidth, 0);
+      }
+
+      if (direction < 0 && wrapper.scrollLeft <= step) {
+        wrapper.scrollLeft = wrapper.scrollLeft + halfTrackWidth;
+      }
+    }
+
+    function moveGallery(direction) {
+      const normalizedDirection = direction < 0 ? -1 : 1;
+      const slides = getSlides();
+      if (slides.length <= 1) return;
+
+      const step = getSlideStep();
+      pauseAutoscrollTemporarily();
+      normalizeScrollBeforeMove(normalizedDirection, step);
+
+      wrapper.scrollBy({
+        left: normalizedDirection * step,
+        behavior: prefersReducedMotion ? 'auto' : 'smooth'
+      });
+    }
+
+    prevButton.addEventListener('click', function() {
+      moveGallery(-1);
+    });
+
+    nextButton.addEventListener('click', function() {
+      moveGallery(1);
+    });
+
+    wrapper.addEventListener('keydown', function(event) {
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        moveGallery(-1);
+      }
+
+      if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        moveGallery(1);
+      }
+    });
+
+    window.addEventListener('resize', function() {
+      setControlsState();
+    });
+
+    window.addEventListener('domingos-de-rayuela:gallery-updated', function() {
+      setControlsState();
+    });
+
+    setControlsState();
+  })();
+
   // ===== Galería: quitar slides con imagen rota (misma src en ambas mitades del carril) =====
   (function initGaleriaBrokenImageGuard() {
     if (!isHomePage) return;
@@ -218,12 +365,19 @@
 
     function removeSlidesWithSrc(failedSrc) {
       if (!failedSrc) return;
+      let removed = false;
+
       track.querySelectorAll('.galeria__slide').forEach(function(slide) {
         const im = slide.querySelector('img');
         if (im && im.getAttribute('src') === failedSrc) {
           slide.remove();
+          removed = true;
         }
       });
+
+      if (removed) {
+        window.dispatchEvent(new CustomEvent('domingos-de-rayuela:gallery-updated'));
+      }
     }
 
     track.querySelectorAll('.galeria__slide img').forEach(function(img) {
@@ -472,6 +626,56 @@
         } else {
           panel.setAttribute('hidden', '');
           if (labelEl) labelEl.textContent = 'Ver más';
+        }
+      });
+    });
+  })();
+
+  // ===== "Nosotros": cards interactivas con giro =====
+  (function initNosotrosFlipCards() {
+    const cards = document.querySelectorAll('[data-nosotros-card]');
+    if (!cards.length) return;
+
+    function setCardState(card, isFlipped) {
+      if (!card) return;
+
+      const toggles = card.querySelectorAll('.nosotros__card-toggle');
+      card.classList.toggle('is-flipped', isFlipped);
+
+      toggles.forEach(function(toggle) {
+        const isBackToggle = toggle.classList.contains('nosotros__card-toggle--back');
+        toggle.setAttribute('aria-expanded', String(isFlipped));
+        toggle.tabIndex = isBackToggle === isFlipped ? 0 : -1;
+      });
+    }
+
+    cards.forEach(function(card) {
+      const toggles = card.querySelectorAll('.nosotros__card-toggle');
+      if (!toggles.length) return;
+
+      toggles.forEach(function(toggle) {
+        const targetId = toggle.getAttribute('aria-controls');
+        const panel = targetId ? document.getElementById(targetId) : null;
+        if (!panel || !card.contains(panel)) return;
+
+        toggle.addEventListener('click', function(event) {
+          event.preventDefault();
+          event.stopPropagation();
+
+          const isFlipped = card.classList.contains('is-flipped');
+          setCardState(card, !isFlipped);
+        });
+      });
+
+      setCardState(card, false);
+    });
+
+    document.addEventListener('keydown', function(event) {
+      if (event.key !== 'Escape') return;
+
+      cards.forEach(function(card) {
+        if (card.classList.contains('is-flipped')) {
+          setCardState(card, false);
         }
       });
     });
