@@ -7283,6 +7283,7 @@ p { color: var(--c-ink-soft); }
   height: 28px;
   margin-left: 16px;
   margin-right: 16px;
+  display: block;
   transition: transform var(--transition-base);
 }
 
@@ -7597,21 +7598,27 @@ p { color: var(--c-ink-soft); }
 
 .about-team__grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: var(--spacing-xl) var(--spacing-lg);
   max-width: 1000px;
   margin: 0 auto;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 520px) {
+  .about-team__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 760px) {
   .about-team__grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (min-width: 920px) {
+@media (min-width: 1080px) {
   .about-team__grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-2xl) var(--spacing-xl);
   }
 }
@@ -7683,6 +7690,7 @@ p { color: var(--c-ink-soft); }
   letter-spacing: -0.01em;
   margin-bottom: 2px;
   line-height: 1.25;
+  overflow-wrap: break-word;
 }
 
 .team-card__role {
@@ -7691,6 +7699,7 @@ p { color: var(--c-ink-soft); }
   font-weight: 600;
   margin-bottom: 4px;
   line-height: 1.3;
+  max-width: 18rem;
 }
 
 .team-card__time {
@@ -7724,6 +7733,108 @@ p { color: var(--c-ink-soft); }
 
   .team-card__name {
     font-size: var(--font-size-base);
+  }
+}
+
+/* Voces de ex voluntarias */
+.about-alumni-voices {
+  background:
+    radial-gradient(circle at 12% 16%, rgba(244, 114, 182, 0.14) 0, transparent 32%),
+    radial-gradient(circle at 88% 12%, rgba(0, 191, 99, 0.12) 0, transparent 30%),
+    linear-gradient(180deg, var(--color-white) 0%, var(--color-pastel-green) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-alumni-voices__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.alumni-voice-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+  padding: clamp(1.25rem, 4vw, 1.75rem);
+  border: 1px solid rgba(0, 191, 99, 0.16);
+  border-radius: var(--radius-2xl);
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.alumni-voice-card::before {
+  content: '“';
+  position: absolute;
+  top: 0.45rem;
+  left: 1rem;
+  font-family: var(--font-heading);
+  font-size: 4.5rem;
+  line-height: 1;
+  color: rgba(0, 191, 99, 0.13);
+  pointer-events: none;
+}
+
+.alumni-voice-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 191, 99, 0.32);
+  box-shadow: var(--shadow-md);
+}
+
+.alumni-voice-card__quote {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 var(--spacing-lg);
+}
+
+.alumni-voice-card__quote p {
+  margin: 0;
+  color: var(--color-text);
+  font-size: clamp(1rem, 2vw, 1.08rem);
+  line-height: 1.65;
+}
+
+.alumni-voice-card__footer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.alumni-voice-card__name {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-lg);
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
+.alumni-voice-card__time {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--color-primary-dark);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.alumni-voice-card__time::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  display: inline-block;
+}
+
+@media (min-width: 720px) {
+  .about-alumni-voices__grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 

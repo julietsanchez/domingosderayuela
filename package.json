@@ -7,11 +7,12 @@
     "node": ">=18"
   },
   "scripts": {
-    "test": "node --test tests/quieroayudar-mail-utils.test.js tests/sumatevoluntariado-mail.test.js tests/nosotros-cards-validator.test.js tests/galeria-carousel.test.js tests/internal-heroes.test.js",
+    "test": "node --test tests/quieroayudar-mail-utils.test.js tests/sumatevoluntariado-mail.test.js tests/nosotros-cards-validator.test.js tests/galeria-carousel.test.js tests/internal-heroes.test.js tests/about-team.test.js",
     "verify:env": "node scripts/verify-quieroayudar-env.js",
     "verify:nosotros-cards": "node scripts/verify-nosotros-cards.js",
     "verify:galeria-carousel": "node scripts/verify-galeria-carousel.js",
     "verify:internal-heroes": "node scripts/verify-internal-heroes.js",
+    "verify:about-team": "node scripts/verify-about-team.js",
     "dev": "serve . -l 3000"
   },
   "dependencies": {
