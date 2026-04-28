@@ -6436,20 +6436,20 @@ p { color: var(--c-ink-soft); }
 /* ===== Footer: cálido, infantil sutil ===== */
 .footer {
   background:
-    linear-gradient(180deg, var(--c-sky-soft) 0%, var(--c-cream) 60%, var(--c-pink-soft) 100%);
-  border-top: 1px solid var(--c-line);
+    linear-gradient(180deg, var(--c-green) 0%, var(--c-green-deep) 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
   border-top-left-radius: 36px;
   border-top-right-radius: 36px;
   padding-top: clamp(3rem, 6vw, 4.5rem);
   padding-bottom: 1.75rem;
   margin-top: 0;
-  color: var(--c-ink-soft);
+  color: rgba(255, 255, 255, 0.95);
 }
 
 .footer__top {
   gap: clamp(1.5rem, 4vw, 2.5rem);
   padding-bottom: 1.75rem;
-  border-bottom: 1px dashed rgba(111, 176, 79, 0.25);
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.28);
   margin-bottom: 1.5rem;
 }
 
@@ -6460,7 +6460,7 @@ p { color: var(--c-ink-soft); }
   font-style: normal;
   font-weight: 600;
   font-size: 0.95rem;
-  color: var(--c-green-deep);
+  color: rgba(255, 255, 255, 0.92);
   margin-top: 0.6rem;
   max-width: 260px;
   line-height: 1.5;
@@ -6469,34 +6469,34 @@ p { color: var(--c-ink-soft); }
 .footer__nav-list a {
   font-family: var(--font-heading);
   font-size: 0.95rem;
-  color: var(--c-ink);
+  color: rgba(255, 255, 255, 0.92);
   font-weight: 600;
   transition: color 0.25s ease;
   letter-spacing: 0;
 }
-.footer__nav-list a:hover { color: var(--c-green-deep); }
+.footer__nav-list a:hover { color: #ffffff; }
 
 .footer__social-link {
   width: 40px;
   height: 40px;
-  border: 1.5px solid var(--c-line);
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
   border-radius: 50%;
-  color: var(--c-green-deep);
-  background: var(--c-shell);
+  color: rgba(255, 255, 255, 0.94);
+  background: rgba(255, 255, 255, 0.12);
   transition: all 0.3s ease;
 }
 
 .footer__social-link:hover {
-  background: var(--c-green);
-  color: #fff;
-  border-color: var(--c-green);
+  background: #fff;
+  color: var(--c-green-deep);
+  border-color: #fff;
   transform: translateY(-2px) rotate(-4deg);
-  box-shadow: 0 6px 14px rgba(111, 176, 79, 0.3);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
 }
 
 .footer__bottom p {
   font-size: 0.78rem;
-  color: var(--c-ink-mute);
+  color: rgba(255, 255, 255, 0.86);
   letter-spacing: 0.04em;
 }
 
