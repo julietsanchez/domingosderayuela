@@ -3,6 +3,10 @@
   "version": 2,
   "rewrites": [
     {
+      "source": "/((?!api/|assets/|en-construccion\\.html|.*\\.).*)",
+      "destination": "/en-construccion.html"
+    },
+    {
       "source": "/quieroayudar",
       "destination": "/quieroayudar.html"
     },

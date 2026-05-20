@@ -8544,3 +8544,42 @@ p { color: var(--c-ink-soft); }
   opacity: 0.85;
   cursor: not-allowed;
 }
+
+/* ============================================================
+   Página «Sitio en construcción»
+   ============================================================ */
+.site-construction {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xl);
+  padding: clamp(1.5rem, 5vw, 3rem);
+  text-align: center;
+  background: linear-gradient(
+    165deg,
+    var(--color-primary) 0%,
+    var(--color-primary-dark) 55%,
+    #005a32 100%
+  );
+}
+
+.site-construction__logo {
+  width: min(330px, 78vw);
+  height: auto;
+  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.32));
+}
+
+.site-construction__title {
+  margin: 0;
+  max-width: 20ch;
+  font-family: var(--font-heading);
+  font-size: clamp(1.35rem, 4.5vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.35;
+  color: var(--color-white);
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.28);
+}
