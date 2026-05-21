@@ -1,87 +1,11 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "version": 2,
-  "redirects": [
-    {
-      "source": "/",
-      "destination": "/en-construccion.html",
-      "permanent": false
-    },
-    {
-      "source": "/index.html",
-      "destination": "/en-construccion.html",
-      "permanent": false
-    },
-    {
-      "source": "/nosotros",
-      "destination": "/en-construccion.html",
-      "permanent": false
-    },
-    {
-      "source": "/nosotros.html",
-      "destination": "/en-construccion.html",
-      "permanent": false
-    },
-    {
-      "source": "/blog",
-      "destination": "/en-construccion.html",
-      "permanent": false
-    },
-    {
-      "source": "/blog.html",
-      "destination": "/en-construccion.html",
-      "permanent": false
-    },
-    {
-      "source": "/quieroayudar",
-      "destination": "/en-construccion.html",
-      "permanent": false
-    },
-    {
-      "source": "/quieroayudar/",
-      "destination": "/en-construccion.html",
-      "permanent": false
-    },
-    {
-      "source": "/quieroayudar.html",
-      "destination": "/en-construccion.html",
-      "permanent": false
-    },
-    {
-      "source": "/sumate",
-      "destination": "/en-construccion.html",
-      "permanent": false
-    },
-    {
-      "source": "/sumate/",
-      "destination": "/en-construccion.html",
-      "permanent": false
-    },
-    {
-      "source": "/sumate.html",
-      "destination": "/en-construccion.html",
-      "permanent": false
-    },
-    {
-      "source": "/sumate/index.html",
-      "destination": "/en-construccion.html",
-      "permanent": false
-    },
-    {
-      "source": "/donaciones.html",
-      "destination": "/en-construccion.html",
-      "permanent": false
-    },
-    {
-      "source": "/padrinos.html",
-      "destination": "/en-construccion.html",
-      "permanent": false
-    },
-    {
-      "source": "/voluntariado.html",
-      "destination": "/en-construccion.html",
-      "permanent": false
-    }
+  "rewrites": [
+    { "source": "/sumate", "destination": "/sumate/index.html" },
+    { "source": "/sumate/", "destination": "/sumate/index.html" },
+    { "source": "/quieroayudar", "destination": "/quieroayudar.html" },
+    { "source": "/quieroayudar/", "destination": "/quieroayudar.html" }
   ],
   "headers": [
     {
