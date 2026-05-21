@@ -91,8 +91,30 @@ npm run verify:sumate-env
 
 ## Si algo falla
 
-- **HTTP 401 en el formulario:** casi siempre el despliegue tiene acceso *Solo yo*. Editá la implementación → **Cualquier usuario** → nueva versión (misma URL si editás la implementación existente).  
-- **`unauthorized` en el cuerpo JSON (a veces con HTTP 200):** el secreto en Vercel no coincide con `WEBHOOK_SECRET` en Apps Script.  
+### Sigue HTTP 401 aunque “ya está público”
+
+1. **Prueba en incógnito (la más importante)**  
+   Pegá en el navegador la misma URL que está en Vercel (`.../exec`), sin estar logueada en Google o en ventana de incógnito.  
+   - Si ves JSON tipo `{"ok":true,"service":"sumate-webhook",...}` → el acceso público está bien.  
+   - Si pide login o error 401 → el despliegue **sigue** sin ser anónimo.
+
+2. **Tres opciones que Google muestra distinto** (no son lo mismo):  
+   | Opción en español (aprox.) | ¿Sirve para Vercel? |  
+   |----------------------------|---------------------|  
+   | **Cualquier usuario** / *Anyone* | ✅ Sí |  
+   | Cualquier usuario **con cuenta de Google** | ❌ No (suele dar 401) |  
+   | Solo yo | ❌ No (401) |  
+
+3. **Ejecutar como: Yo** (no “usuario que accede a la aplicación web”).  
+
+4. **Implementación nueva** después de cambiar acceso: **Implementar → Nueva implementación**, copiá la URL `/exec` y actualizá `GOOGLE_SHEETS_SUMATE_WEBHOOK_URL` en Vercel → **Redeploy**. Editar a veces no actualiza el endpoint que usa el servidor.
+
+5. **Pegá el `doGet` actualizado** del repo (`docs/google-apps-script-sumate.gs`), guardá y volvé a desplegar, para poder usar la prueba de incógnito de arriba.
+
+6. **Script de prueba local** (con `.env.local` con las mismas variables que Production):  
+   `node scripts/test-sumate-sheets-webhook.js`
+
+- **`unauthorized` en el JSON (a menudo HTTP 200):** el secreto en Vercel no coincide con `WEBHOOK_SECRET` en Apps Script.  
 - **Fila en columna incorrecta:** los encabezados de la fila 1 no coinciden con el orden del documento (no mueve columnas el script; solo hace `appendRow` en orden A→O).  
 - **Cambios en el script:** cada cambio en el `.gs` requiere **Nueva implementación** en Apps Script; la URL puede cambiar si creás una implementación nueva (actualizá Vercel si cambia).
 

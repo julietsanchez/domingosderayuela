@@ -56,6 +56,7 @@ test('buildSumateSheetPayload incluye secret y row', function () {
 
 test('describeSheetsFailure distingue HTTP 401 de token unauthorized', function () {
   assert.match(describeSheetsFailure(401, null), /Cualquier usuario/);
+  assert.match(describeSheetsFailure(302, null), /login/);
   assert.match(describeSheetsFailure(200, { error: 'unauthorized' }), /GOOGLE_SHEETS_SUMATE_SECRET/);
 });
 

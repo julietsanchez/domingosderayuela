@@ -11,7 +11,7 @@
  */
 
 /** @const {string} Mismo valor que GOOGLE_SHEETS_SUMATE_SECRET en Vercel. */
-var WEBHOOK_SECRET = '244ae83d38cbe7e033616070ad8794c41c093bab598bdbf5d3ef235fc35e1314';
+var WEBHOOK_SECRET = 'CAMBIAR_POR_TOKEN_LARGO_ALEATORIO';
 
 /** Nombre de la pestaña donde se agregan filas (creala si no existe). */
 var SHEET_TAB_NAME = 'Postulaciones';
@@ -29,6 +29,19 @@ function jsonResponse(payload, statusCode) {
     // Apps Script no expone status HTTP en doPost; el cliente valida body.ok
   }
   return out;
+}
+
+/**
+ * Prueba de acceso público: abrí la URL /exec del despliegue en una ventana de incógnito.
+ * Si ves JSON con ok:true, el acceso "Cualquier usuario" está bien. Si pide login o 401, no.
+ * @returns {GoogleAppsScript.Content.TextOutput}
+ */
+function doGet() {
+  return jsonResponse({
+    ok: true,
+    service: 'sumate-webhook',
+    hint: 'Usá POST con JSON { secret, row } para agregar una fila.'
+  });
 }
 
 /**

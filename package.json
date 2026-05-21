@@ -10,6 +10,7 @@
     "test": "node --test tests/quieroayudar-mail-utils.test.js tests/sumatevoluntariado-mail.test.js tests/sumatevoluntariado-sheets.test.js tests/nosotros-cards-validator.test.js tests/galeria-carousel.test.js tests/internal-heroes.test.js tests/about-team.test.js",
     "verify:env": "node scripts/verify-quieroayudar-env.js",
     "verify:sumate-env": "node scripts/verify-sumate-env.js",
+    "test:sumate-webhook": "node scripts/test-sumate-sheets-webhook.js",
     "verify:nosotros-cards": "node scripts/verify-nosotros-cards.js",
     "verify:galeria-carousel": "node scripts/verify-galeria-carousel.js",
     "verify:internal-heroes": "node scripts/verify-internal-heroes.js",
