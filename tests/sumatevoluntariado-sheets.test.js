@@ -6,6 +6,7 @@ const {
   SUMATE_SHEET_HEADERS,
   buildSumateSheetRow,
   buildSumateSheetPayload,
+  describeSheetsFailure,
   appendSumateToGoogleSheet
 } = require('../lib/sumatevoluntariado-sheets');
 
@@ -51,6 +52,11 @@ test('buildSumateSheetPayload incluye secret y row', function () {
   const payload = buildSumateSheetPayload(sampleData, 'fecha', 'token-secreto-test');
   assert.equal(payload.secret, 'token-secreto-test');
   assert.equal(payload.row.length, 15);
+});
+
+test('describeSheetsFailure distingue HTTP 401 de token unauthorized', function () {
+  assert.match(describeSheetsFailure(401, null), /Cualquier usuario/);
+  assert.match(describeSheetsFailure(200, { error: 'unauthorized' }), /GOOGLE_SHEETS_SUMATE_SECRET/);
 });
 
 test('appendSumateToGoogleSheet falla sin URL o secret', async function () {

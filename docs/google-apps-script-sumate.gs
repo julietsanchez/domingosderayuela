@@ -6,7 +6,7 @@
  * 3. Cambiá WEBHOOK_SECRET por un token largo (el mismo valor que GOOGLE_SHEETS_SUMATE_SECRET en Vercel).
  * 4. Desplegar → Nueva implementación → Tipo: Aplicación web
  *    - Ejecutar como: Yo
- *    - Quién tiene acceso: Solo yo (el servidor llama con POST; la URL no va al navegador del usuario)
+ *    - Quién tiene acceso: Cualquier usuario / Anyone (si es "Solo yo", Vercel recibe HTTP 401)
  * 5. Copiá la URL de la implementación a GOOGLE_SHEETS_SUMATE_WEBHOOK_URL en Vercel.
  */
 

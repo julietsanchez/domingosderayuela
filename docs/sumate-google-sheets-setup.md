@@ -48,7 +48,8 @@ Las filas nuevas se agregan automáticamente debajo (desde la fila 2 en adelante
    - Tipo: **Aplicación web**.  
    - Descripción: ej. `sumate-webhook-v1`.  
    - **Ejecutar como:** Yo (tu cuenta).  
-   - **Quién tiene acceso:** Solo yo.  
+   - **Quién tiene acceso:** **Cualquier usuario** (en inglés: *Anyone*).  
+     - Importante: si elegís *Solo yo*, Vercel recibe **HTTP 401** y el formulario falla. La seguridad la da el token `WEBHOOK_SECRET`, no el login de Google.  
    - **Implementar** y autorizá los permisos (lectura/escritura en la hoja).  
    - Copiá la **URL de la aplicación web** (termina en `/exec`). Esa es `GOOGLE_SHEETS_SUMATE_WEBHOOK_URL`.
 
@@ -90,7 +91,8 @@ npm run verify:sumate-env
 
 ## Si algo falla
 
-- **401 / unauthorized en logs:** el secreto en Vercel no coincide con `WEBHOOK_SECRET` en Apps Script.  
+- **HTTP 401 en el formulario:** casi siempre el despliegue tiene acceso *Solo yo*. Editá la implementación → **Cualquier usuario** → nueva versión (misma URL si editás la implementación existente).  
+- **`unauthorized` en el cuerpo JSON (a veces con HTTP 200):** el secreto en Vercel no coincide con `WEBHOOK_SECRET` en Apps Script.  
 - **Fila en columna incorrecta:** los encabezados de la fila 1 no coinciden con el orden del documento (no mueve columnas el script; solo hace `appendRow` en orden A→O).  
 - **Cambios en el script:** cada cambio en el `.gs` requiere **Nueva implementación** en Apps Script; la URL puede cambiar si creás una implementación nueva (actualizá Vercel si cambia).
 
