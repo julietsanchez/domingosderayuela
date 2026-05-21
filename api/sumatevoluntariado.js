@@ -1,9 +1,11 @@
 'use strict';
 
 /**
- * POST /api/sumatevoluntariado — formulario de convocatoria en /sumate (Resend).
+ * POST /api/sumatevoluntariado — convocatoria /sumate: Google Sheet + Resend.
  *
  * Variables de entorno (Vercel → Settings → Environment Variables):
+ * - GOOGLE_SHEETS_SUMATE_WEBHOOK_URL — URL /exec de la Web App (Apps Script).
+ * - GOOGLE_SHEETS_SUMATE_SECRET — token compartido con WEBHOOK_SECRET del script.
  * - RESEND_API_KEY — obligatoria (salvo que definas RESEND_API_KEY_SUMATE).
  * - RESEND_API_KEY_SUMATE — opcional. Otra API key de Resend solo para esta convocatoria.
  * - MAIL_FROM, MAIL_TO — obligatorias si no usás las específicas de sumate.
@@ -11,11 +13,15 @@
  * - MAIL_TO_SUMATE — opcional. Casilla distinta para recibir postulaciones.
  * - MAIL_BCC_SUMATE — opcional. BCC específico para sumate. Si no se define o viene
  *   vacío, se usa el MAIL_BCC general (igual que el resto de las variables).
+ *
+ * Orden: validar → guardar en Sheet → enviar mail. Si falla la Sheet, no hay success ni mail.
+ * Ver docs/sumate-google-sheets-setup.md
  */
 
 const { Resend } = require('resend');
 const { trimString, parseBccList } = require('../lib/quieroayudar-utils');
 const { processSumateBody, buildSumateEmailContent } = require('../lib/sumatevoluntariado-mail');
+const { appendSumateToGoogleSheet } = require('../lib/sumatevoluntariado-sheets');
 
 const MAX_BODY_BYTES = 64 * 1024;
 const MAX_DETAIL_LEN = 240;
@@ -161,13 +167,18 @@ module.exports = async function handler(req, res) {
       ? process.env.MAIL_BCC_SUMATE
       : process.env.MAIL_BCC;
 
-  if (!apiKey || !mailFrom || !mailTo) {
+  const sheetsWebhookUrl = trimString(process.env.GOOGLE_SHEETS_SUMATE_WEBHOOK_URL);
+  const sheetsSecret = trimString(process.env.GOOGLE_SHEETS_SUMATE_SECRET);
+
+  if (!apiKey || !mailFrom || !mailTo || !sheetsWebhookUrl || !sheetsSecret) {
     const missing = [];
     if (!apiKey) missing.push('RESEND_API_KEY');
     if (!mailFrom) missing.push('MAIL_FROM');
     if (!mailTo) missing.push('MAIL_TO');
+    if (!sheetsWebhookUrl) missing.push('GOOGLE_SHEETS_SUMATE_WEBHOOK_URL');
+    if (!sheetsSecret) missing.push('GOOGLE_SHEETS_SUMATE_SECRET');
     console.error(
-      '[sumatevoluntariado] Falta configuración en Vercel. Variables ausentes (o su equivalente _SUMATE):',
+      '[sumatevoluntariado] Falta configuración en Vercel. Variables ausentes:',
       missing.join(', ')
     );
     res.statusCode = 500;
@@ -177,7 +188,7 @@ module.exports = async function handler(req, res) {
         error: {
           code: 'SERVER_CONFIG',
           message:
-            'El servicio de correo no está configurado en el servidor. Intentá de nuevo en unos minutos o avisanos por otro canal.',
+            'El servicio no está configurado en el servidor. Intentá de nuevo en unos minutos o avisanos por otro canal.',
           detail: 'Variables faltantes: ' + missing.join(', ')
         }
       })
@@ -197,6 +208,29 @@ module.exports = async function handler(req, res) {
     dateStyle: 'long',
     timeStyle: 'short'
   });
+
+  const sheetResult = await appendSumateToGoogleSheet({
+    webhookUrl: sheetsWebhookUrl,
+    secret: sheetsSecret,
+    data: processed.data,
+    receivedAt
+  });
+
+  if (!sheetResult.ok) {
+    const statusCode = sheetResult.code === 'SERVER_CONFIG' ? 500 : 502;
+    res.statusCode = statusCode;
+    res.end(
+      JSON.stringify({
+        success: false,
+        error: {
+          code: sheetResult.code,
+          message: sheetResult.message,
+          detail: safeDetail(sheetResult.detail)
+        }
+      })
+    );
+    return;
+  }
 
   const { html, text } = buildSumateEmailContent(processed.data, receivedAt);
 
