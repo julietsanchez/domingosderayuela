@@ -68,11 +68,18 @@
       </div>
     </section>
 
-    <!-- Video: agregar el ID de YouTube en data-youtube-id (solo letras, números, guiones y guión bajo) -->
     <section class="section sumate-video-section" aria-labelledby="sumate-video-title">
       <div class="container">
         <h2 id="sumate-video-title" class="section__title section__title--center sumate-video-section__title">Conocé un poco más</h2>
-        <div id="sumateVideoMount" class="sumate-video" data-youtube-id="" aria-hidden="true"></div>
+        <div id="sumateVideoMount" class="sumate-video">
+          <div class="sumate-video__ratio">
+            <video class="sumate-video__player" controls playsinline preload="metadata" width="1080" height="1920" aria-labelledby="sumate-video-title">
+              <source src="../assets/videos/videoconvocatoria.MOV" type="video/quicktime">
+              <source src="../assets/videos/videoconvocatoria.MOV" type="video/mp4">
+              Tu navegador no puede reproducir este video. Escribinos por WhatsApp si necesitás ayuda.
+            </video>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -140,8 +147,8 @@
             </fieldset>
 
             <div class="form__group">
-              <label for="experienciaDetalle" class="form__label">En caso afirmativo, contanos brevemente tu experiencia</label>
-              <textarea id="experienciaDetalle" name="experienciaDetalle" class="form__textarea" rows="3" placeholder="Si elegiste Sí arriba, contanos en unas líneas."></textarea>
+              <label for="experienciaDetalle" class="form__label">¿Por qué te gustaría ser voluntario/a?</label>
+              <textarea id="experienciaDetalle" name="experienciaDetalle" class="form__textarea" rows="3" placeholder="Contanos en unas líneas qué te motiva a sumarte."></textarea>
               <span class="form__error" id="experienciaDetalleError" aria-live="polite"></span>
             </div>
 

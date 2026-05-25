@@ -8528,36 +8528,53 @@ p { color: var(--c-ink-soft); }
 
 .sumate-video-section {
   padding-top: var(--spacing-lg);
-  padding-bottom: var(--spacing-sm);
+  padding-bottom: var(--spacing-md);
 }
 
 .sumate-video-section__title {
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
 }
 
 .sumate-video {
-  max-width: 900px;
-  margin: 0 auto;
+  width: 100%;
+  margin-inline: auto;
 }
 
 .sumate-video__ratio {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%;
-  height: 0;
+  aspect-ratio: 9 / 16;
   overflow: hidden;
   border-radius: var(--radius-lg);
   box-shadow: 0 12px 40px rgba(13, 107, 76, 0.12);
   background: #0a0a0a;
 }
 
-.sumate-video__ratio iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
+.sumate-video__ratio--landscape {
+  aspect-ratio: 16 / 9;
+}
+
+.sumate-video__ratio iframe,
+.sumate-video__ratio .sumate-video__player {
+  display: block;
   width: 100%;
   height: 100%;
   border: 0;
+}
+
+.sumate-video__ratio .sumate-video__player {
+  object-fit: contain;
+  background: #0a0a0a;
+}
+
+@media (min-width: 768px) {
+  .sumate-video-section__title {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .sumate-video {
+    width: min(100%, 24rem);
+  }
 }
 
 .form__fieldset {

@@ -19,18 +19,22 @@
 
   var videoMount = document.getElementById('sumateVideoMount');
   if (videoMount) {
-    var ytId = (videoMount.getAttribute('data-youtube-id') || '').trim();
-    if (ytId && /^[a-zA-Z0-9_-]{6,32}$/.test(ytId)) {
+    if (videoMount.querySelector('video, iframe')) {
       videoMount.removeAttribute('aria-hidden');
-      videoMount.innerHTML =
-        '<div class="sumate-video__ratio">' +
-        '<iframe title="Video de presentación del voluntariado" src="https://www.youtube-nocookie.com/embed/' +
-        encodeURIComponent(ytId) +
-        '" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>' +
-        '</div>';
     } else {
-      videoMount.innerHTML = '';
-      videoMount.setAttribute('aria-hidden', 'true');
+      var ytId = (videoMount.getAttribute('data-youtube-id') || '').trim();
+      if (ytId && /^[a-zA-Z0-9_-]{6,32}$/.test(ytId)) {
+        videoMount.removeAttribute('aria-hidden');
+        videoMount.innerHTML =
+          '<div class="sumate-video__ratio sumate-video__ratio--landscape">' +
+          '<iframe title="Video de presentación del voluntariado" src="https://www.youtube-nocookie.com/embed/' +
+          encodeURIComponent(ytId) +
+          '" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>' +
+          '</div>';
+      } else {
+        videoMount.innerHTML = '';
+        videoMount.setAttribute('aria-hidden', 'true');
+      }
     }
   }
 
