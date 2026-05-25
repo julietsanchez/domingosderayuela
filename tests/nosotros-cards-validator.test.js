@@ -21,14 +21,21 @@ test('las cards de nosotros tienen estructura interactiva completa', function ()
   assert.equal(result.cardCount, EXPECTED_CARD_COUNT);
 });
 
-test('cada card tiene cuatro fotos internas', function () {
+test('cada card tiene cuatro fotos internas o fondo difuminado', function () {
   const cards = getNosotrosCardBlocks(indexHtml);
 
   assert.equal(cards.length, EXPECTED_CARD_COUNT);
 
   cards.forEach(function(cardHtml) {
     const miniPhotoCount = (cardHtml.match(/class="nosotros__mini-photo"/g) || []).length;
-    assert.equal(miniPhotoCount, EXPECTED_MINI_PHOTO_COUNT);
+    const isBlurBack = /nosotros__card-face--blur/.test(cardHtml);
+
+    if (isBlurBack) {
+      assert.equal(miniPhotoCount, 0);
+      assert.match(cardHtml, /--card-img:\s*url\(/);
+    } else {
+      assert.equal(miniPhotoCount, EXPECTED_MINI_PHOTO_COUNT);
+    }
   });
 });
 

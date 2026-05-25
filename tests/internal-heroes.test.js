@@ -19,7 +19,7 @@ function readHtml(relativePath) {
   return fs.readFileSync(path.join(rootDir, relativePath), 'utf8');
 }
 
-test('las páginas internas tienen banner aleatorio y logo blanco', function () {
+test('las páginas internas tienen banner fijo y logo blanco', function () {
   INTERNAL_HERO_PAGES.forEach(function(config) {
     const errors = validateInternalHeroPage(readHtml(config.path), config);
     assert.deepEqual(errors, []);
@@ -42,12 +42,11 @@ test('los estilos de hero interno reutilizan el overlay verde del home', functio
   assert.match(stylesCss, /\.redirect-splash__logo/);
 });
 
-test('el script inicializa imágenes aleatorias para banners internos', function () {
-  assert.match(scriptJs, /INTERNAL_HERO_IMAGES/);
-  assert.match(scriptJs, /initInternalHeroBanners/);
-  assert.match(scriptJs, /data-random-hero/);
-  assert.match(scriptJs, /--internal-hero-img/);
-  assert.match(scriptJs, /isNestedPage\s*\?\s*'\.\.\/assets\/images\/'\s*:\s*'\.\/assets\/images\/'/);
+test('el script no reemplaza las imágenes fijas de banners internos', function () {
+  assert.doesNotMatch(scriptJs, /INTERNAL_HERO_IMAGES/);
+  assert.doesNotMatch(scriptJs, /initInternalHeroBanners/);
+  assert.doesNotMatch(scriptJs, /data-random-hero/);
+  assert.doesNotMatch(scriptJs, /Math\.floor\(Math\.random\(\)/);
 });
 
 test('los validadores rechazan entradas inválidas', function () {

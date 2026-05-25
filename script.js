@@ -11,20 +11,6 @@
   // Detect current page
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   const isHomePage = currentPage === 'index.html' || currentPage === '' || currentPage === '/';
-  const isNestedPage = window.location.pathname.indexOf('/sumate/') !== -1;
-
-  const INTERNAL_HERO_IMAGES = [
-    'jugamos.jpeg',
-    'merienda.jpeg',
-    'actividades.jpeg',
-    'procesos.jpeg',
-    'fechas%20importantes.jpeg',
-    'WhatsApp%20Image%202026-04-16%20at%2011.30.50%20(1).jpeg',
-    'WhatsApp%20Image%202026-04-16%20at%2011.30.52.jpeg',
-    'WhatsApp%20Image%202026-04-16%20at%2014.14.58.jpeg',
-    'voluntarias1.jpeg',
-    'voluntarias3.jpeg'
-  ];
 
   // ===== WhatsApp Float Config =====
   // Para activar el botón flotante, completar `phone` con el número internacional
@@ -50,21 +36,6 @@
   const carouselTrack = document.getElementById('carouselTrack');
   const carouselSlides = document.querySelectorAll('.carousel__slide');
   const carouselDots = document.querySelectorAll('.carousel__dot');
-
-  // ===== Banners internos con foto aleatoria =====
-  (function initInternalHeroBanners() {
-    const heroes = document.querySelectorAll('[data-random-hero]');
-    if (!heroes.length || !INTERNAL_HERO_IMAGES.length) return;
-
-    const assetPrefix = isNestedPage ? '../assets/images/' : './assets/images/';
-
-    heroes.forEach(function(hero) {
-      const randomIndex = Math.floor(Math.random() * INTERNAL_HERO_IMAGES.length);
-      const imageUrl = assetPrefix + INTERNAL_HERO_IMAGES[randomIndex];
-
-      hero.style.setProperty('--internal-hero-img', `url('${imageUrl}')`);
-    });
-  })();
 
   // ===== Carousel State =====
   let currentSlide = 0;

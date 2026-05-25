@@ -22,7 +22,7 @@ test('la página nosotros muestra el equipo actual', function() {
   assert.equal(result.teamMemberCount, EXPECTED_TEAM_MEMBERS.length);
 });
 
-test('cada integrante tiene nombre, texto e inicio como voluntaria o voluntario', function() {
+test('cada integrante tiene nombre e inicio como voluntaria o voluntario', function() {
   const teamMemberBlocks = getTeamMemberBlocks(nosotrosHtml);
 
   assert.equal(teamMemberBlocks.length, EXPECTED_TEAM_MEMBERS.length);
@@ -31,14 +31,19 @@ test('cada integrante tiene nombre, texto e inicio como voluntaria o voluntario'
     assert.match(nosotrosHtml, new RegExp(`<h3 class="team-card__name">${memberName}</h3>`));
   });
 
+  teamMemberBlocks.forEach(function(block) {
+    assert.doesNotMatch(block, /class="team-card__role"/);
+  });
+
   assert.match(nosotrosHtml, /Facundo Garnica[\s\S]*?Voluntario desde \d{4}/);
   assert.match(nosotrosHtml, /Nicole Montivero[\s\S]*?Voluntaria desde \d{4}/);
 });
 
-test('la página incluye voces de ex voluntarias tipo review', function() {
+test('la sección de ex voluntarias permanece oculta para uso futuro', function() {
   const alumniVoiceBlocks = getAlumniVoiceBlocks(nosotrosHtml);
 
   assert.equal(alumniVoiceBlocks.length, EXPECTED_ALUMNI_VOICE_COUNT);
+  assert.match(nosotrosHtml, /<section class="section about-alumni-voices"[^>]*\bhidden\b/);
   assert.match(nosotrosHtml, /Voces de ex voluntarias/);
 
   alumniVoiceBlocks.forEach(function(block) {
